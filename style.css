@@ -1,0 +1,80 @@
+/* Add your CSS styles here */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.header nav {
+    /* Style your navigation bar */
+}
+
+.main-content {
+    position: relative;
+    height: 100vh; /* Full height */
+    width: 100vw; /* Full width */
+}
+
+.background-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will cover the whole area */
+}
+
+.trees-left, .trees-right {
+    position: absolute;
+    width: 50%;  /* Adjust the width if necessary */
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    z-index: 10; /* To ensure they are above the background image */
+}
+
+.trees-left {
+    left: -50%; /* Start off-screen */
+    animation: slideInLeft 2s forwards; /* Animation to slide in */
+}
+
+.trees-right {
+    right: -50%; /* Start off-screen */
+    animation: slideInRight 2s forwards; /* Animation to slide in */
+}
+
+.center-img {
+    position: absolute;
+    top: 50%;  /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center the image perfectly */
+    z-index: 20; /* Ensure it's above the other images */
+    opacity: 0; /* Start with the image being transparent */
+    animation: fadeIn 2s ease 2s forwards; /* Fade in after 2 seconds */
+    width: 20%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.kick-img {
+    position: absolute;
+    top: calc(50% + 90px); /* Position 60 pixels below the center image */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 21; /* Ensure it's above the other images */
+    opacity: 0; /* Start with the image being transparent */
+    animation: fadeIn 2s ease 2s forwards; /* Fade in after 2 seconds */
+    width: 5%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Add a pointer cursor to make it clickable */
+}
+
+/* Add more styles as needed */
+@keyframes slideInLeft {
+    to { left: -25%; } /* Stop halfway towards the center */
+}
+
+@keyframes slideInRight {
+    to { right: -25%; } /* Stop halfway towards the center */
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; } /* Fade to fully visible */
+}
