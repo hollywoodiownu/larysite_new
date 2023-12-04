@@ -41,9 +41,9 @@ body, html {
 
 .center-img {
     position: fixed;
-    top: 50vh;  /* Center vertically */
+    top: 50vh; /* Center vertically */
     left: 50vw; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to center the image perfectly */
+    transform: translate(-50%, -60%); /* Adjust vertical position */
     z-index: 20; /* Ensure it's above the other images */
     opacity: 0; /* Start with the image being transparent */
     animation: fadeIn 2s ease 2s forwards; /* Fade in after 2 seconds */
@@ -53,9 +53,9 @@ body, html {
 
 .kick-img {
     position: fixed; /* Changed from absolute to fixed */
-    top: 70vh; /* 70% from the top of the viewport */
+    top: 50vh; /* 70% from the top of the viewport */
     left: 50vw; /* Centered horizontally */
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 120%);
     z-index: 21;
     width: 5vw; /* 5% of the viewport width */
     height: auto;
@@ -65,10 +65,10 @@ body, html {
 }
 
 .timer {
-    position: fixed;
-    bottom: 5vh; /* 5% from the bottom of the viewport */
+    position: absolute; /* Changed from absolute to fixed */
+    top: 50vh; /* 70% from the top of the viewport */
     left: 50vw; /* Centered horizontally */
-    transform: translateX(-50%);
+    transform: translate(-50%, 400%);
     z-index: 20;
     font-size: 3vw; /* 2% of the viewport width */
     font-weight: bold;
