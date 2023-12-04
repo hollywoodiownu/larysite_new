@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow: hidden; /* Prevent scroll bars */
 }
 
 .header nav {
@@ -11,8 +12,9 @@ body, html {
 
 .main-content {
     position: relative;
-    height: 100vh; /* Full height */
-    width: 100vw; /* Full width */
+    min-height: 100%; /* Set a minimum height to fill the viewport */
+    width: 100%;
+    overflow: hidden; /* Prevent scroll bars */
 }
 
 .background-img {
@@ -55,7 +57,7 @@ body, html {
 
 .kick-img {
     position: absolute;
-    top: calc(50% + 90px); /* Position 60 pixels below the center image */
+    top: calc(50% + 90px); /* Position 90 pixels below the center image */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
     z-index: 21; /* Ensure it's above the other images */
