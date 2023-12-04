@@ -64,19 +64,6 @@ body, html {
     animation: fadeIn 2s ease 2s forwards;
 }
 
-.timer {
-    position: absolute; /* Changed from absolute to fixed */
-    top: 50vh; /* 70% from the top of the viewport */
-    left: 50vw; /* Centered horizontally */
-    transform: translate(-50%, 400%);
-    z-index: 20;
-    font-size: 3vw; /* 2% of the viewport width */
-    font-weight: bold;
-    color: white;
-    opacity: 0;
-    animation: fadeIn 2s ease 4s forwards;
-    pointer-events: none; /* Disables click events on the timer */
-}
 
 /* Responsive Design: Adjust styles for smaller screens */
 @media screen and (max-width: 768px) {
