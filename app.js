@@ -34,14 +34,25 @@ window.onload = function() {
     }
 
     // Audio Playback Functionality
-    var audioFiles = [
-        'audio/song1.mp3'
-        // Add more file paths as needed
-    ];
-
+    var audioFiles = ['audio/song1.mp3']; // Add more file paths as needed
     var currentAudioIndex = 0;
     var audio = new Audio();
     audio.volume = 0.5; // Set volume to half
+
+    // Create Play Button
+    var playButton = document.createElement('button');
+    playButton.innerText = 'Play Music';
+    playButton.style.position = 'fixed';
+    playButton.style.bottom = '20px';
+    playButton.style.left = '20px';
+    playButton.style.zIndex = '22'; // Ensure it's above other elements
+    document.body.appendChild(playButton);
+
+    // Play Button Click Event
+    playButton.addEventListener('click', function() {
+        playNextAudio();
+        playButton.disabled = true; // Disable the button during playback
+    });
 
     function playNextAudio() {
         if (currentAudioIndex >= audioFiles.length) {
@@ -56,8 +67,10 @@ window.onload = function() {
         });
 
         currentAudioIndex++;
-    }
 
-    audio.addEventListener('ended', playNextAudio);
-    playNextAudio(); // Start playing the first audio file
+        // Enable the play button after audio ends
+        audio.addEventListener('ended', function() {
+            playButton.disabled = false;
+        });
+    }
 };
