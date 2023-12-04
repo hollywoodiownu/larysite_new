@@ -6,7 +6,7 @@ window.onload = function() {
     centerImageLink.classList.add('disabled');
     centerImageLink.querySelector('.center-img').addEventListener('animationend', function() {
         centerImageLink.classList.remove('disabled');
-        startCountdown();
+        startCountdown(); 
     });
 
     function startCountdown() {
@@ -53,7 +53,6 @@ window.onload = function() {
             console.log("Playing:", audioFiles[currentAudioIndex]);
         }).catch(e => {
             console.error("Failed to play:", e);
-            // Handle the failure of autoplay here (e.g., show a play button)
         });
 
         currentAudioIndex++;
