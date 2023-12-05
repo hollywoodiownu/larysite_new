@@ -1,10 +1,5 @@
 window.onload = function() {
-    var centerImageLink = document.getElementById('centerImageLink');
-
-    centerImageLink.classList.add('disabled');
-    centerImageLink.querySelector('.center-img').addEventListener('animationend', function() {
-        centerImageLink.classList.remove('disabled');
-    });
+    // [existing code for centerImageLink]
 
     // Audio Playback Functionality
     var audioFiles = [
@@ -15,10 +10,15 @@ window.onload = function() {
     ];
 
     var currentAudioIndex = 0;
-    var audio = new Audio();
-    audio.volume = 0.5;
+    var audio;
 
     function playNextAudio() {
+        if (!audio) {
+            audio = new Audio();
+            audio.volume = 0.5;
+            audio.addEventListener('ended', playNextAudio);
+        }
+
         if (currentAudioIndex >= audioFiles.length) {
             currentAudioIndex = 0;
         }
@@ -33,13 +33,11 @@ window.onload = function() {
         currentAudioIndex++;
     }
 
-    audio.addEventListener('ended', playNextAudio);
-
     // Spacebar to play/pause
     window.addEventListener('keydown', function(e) {
-        if (e.keyCode === 32) { // Spacebar keycode is 32
-            e.preventDefault(); // Prevent default spacebar action (scrolling)
-            if (audio.paused) {
+        if (e.keyCode === 32) {
+            e.preventDefault();
+            if (!audio || audio.paused) {
                 playNextAudio();
             } else {
                 audio.pause();
