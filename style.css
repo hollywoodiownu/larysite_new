@@ -93,17 +93,9 @@ img {
 
 @media screen and (max-width: 480px) {
     .center-img, .kick-img, .discord-img {
-        width: 80vw; /* Adjusted for mobile screens */
+        width: 80vw; /* Increase the size for mobile screens */
         transform: translate(-50%, -50%);
     }
-
-    .some-text-class {
-        font-size: 14px;
-        margin: 8px;
-    }
-
-    /* Additional adjustments for mobile layout */
-    /* ... */
 }
 
 
