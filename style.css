@@ -93,14 +93,22 @@ body, html {
 }
 
 @media screen and (max-width: 480px) {
-    /* Adjust for mobile phones */
     .center-img, .kick-img, .discord-img {
-        width: 50vw; /* Larger for small screens */
-        transform: translate(-50%, -50%); /* Center the images vertically */
+        width: 80vw; /* Adjusted for mobile screens */
+        height: auto; /* Maintain aspect ratio */
+        transform: translate(-50%, -50%);
+        position: relative; /* or 'fixed' depending on your layout */
+        top: initial;
+        left: 50%;
     }
 
-    /* You might want to adjust font sizes, margins, paddings etc. here */
+    /* Adjust margins, paddings, and font-sizes for mobile */
+    .some-text-class {
+        font-size: 14px; /* Smaller font size for mobile */
+        margin: 10px; /* Reduced margin */
+    }
 }
+
 
 /* Add more styles as needed */
 @keyframes slideInLeft {
