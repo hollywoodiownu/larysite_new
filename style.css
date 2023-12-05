@@ -64,33 +64,64 @@ body, html {
     animation: fadeIn 2s ease 2s forwards;
 }
 
+.discord-img {
+    position: fixed; /* Changed from absolute to fixed */
+    top: 50vh; /* 70% from the top of the viewport */
+    left: 50vw; /* Centered horizontally */
+    transform: translate(-50%, 190%);
+    z-index: 21;
+    width: 5vw; /* 5% of the viewport width */
+    height: auto;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 2s ease 2s forwards;
+}
 
-/* Responsive Design: Adjust styles for smaller screens */
+
+
+/* Responsive Design for Tablets */
 @media screen and (max-width: 768px) {
     .trees-left, .trees-right {
         width: 100vw; /* Full width for smaller screens */
     }
 
-    .center-img, .kick-img {
-        width: 40vw; /* Larger for better visibility on smaller screens */
+    .center-img, .kick-img, .discord-img {
+        width: 30vw; /* Adjusted for better visibility on smaller screens */
+        height: auto; /* Maintain aspect ratio */
     }
 
-    .timer {
-        font-size: 3vw; /* Adjust font size based on viewport width */
+    .center-img {
+        transform: translate(-50%, -70%);
+    }
+
+    .kick-img {
+        transform: translate(-50%, 50%);
+    }
+
+    .discord-img {
+        transform: translate(-50%, 170%);
     }
 }
 
-/* Additional styles for very small screens or zoomed in view */
+/* Responsive Design for Mobile Phones */
 @media screen and (max-width: 480px) {
-    .center-img, .kick-img {
-        width: 60vw; /* Even larger for very small screens */
+    .center-img, .kick-img, .discord-img {
+        width: 50vw; /* Larger for very small screens */
+        height: auto; /* Maintain aspect ratio */
     }
 
-    .timer {
-        font-size: 4vw; /* Adjust font size based on viewport width */
+    .center-img {
+        transform: translate(-50%, -80%);
+    }
+
+    .kick-img {
+        transform: translate(-50%, 30%);
+    }
+
+    .discord-img {
+        transform: translate(-50%, 150%);
     }
 }
-
 
 /* Add more styles as needed */
 @keyframes slideInLeft {
