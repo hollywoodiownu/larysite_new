@@ -9,8 +9,7 @@ window.onload = function() {
     // Audio Playback Functionality (Remains unchanged)
     var audioFiles = [
         'audio/song1.mp3',
-        'audio/song2.mp3',
-        'audio/song3.mp3'
+        'audio/song2.mp3'
         // Add more file paths as needed
     ];
 
