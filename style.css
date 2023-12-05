@@ -77,36 +77,33 @@ body, html {
     animation: fadeIn 2s ease 2s forwards;
 }
 
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-
-/* Responsive Design */
+/* Improved Media Queries */
 @media screen and (max-width: 768px) {
-    /* Adjust for tablets */
-    .trees-left, .trees-right {
-        width: 100vw; /* Full width for smaller screens */
-    }
-
     .center-img, .kick-img, .discord-img {
-        width: 30vw; /* Adjust size for visibility */
-        transform: translate(-50%, -50%); /* Center the images vertically */
+        width: 50vw; /* Adjust size for tablet screens */
+        transform: translate(-50%, -50%);
     }
 }
 
 @media screen and (max-width: 480px) {
     .center-img, .kick-img, .discord-img {
         width: 80vw; /* Adjusted for mobile screens */
-        height: auto; /* Maintain aspect ratio */
         transform: translate(-50%, -50%);
-        position: relative; /* or 'fixed' depending on your layout */
-        top: initial;
-        left: 50%;
     }
 
-    /* Adjust margins, paddings, and font-sizes for mobile */
     .some-text-class {
-        font-size: 14px; /* Smaller font size for mobile */
-        margin: 10px; /* Reduced margin */
+        font-size: 14px;
+        margin: 8px;
     }
+
+    /* Additional adjustments for mobile layout */
+    /* ... */
 }
 
 
