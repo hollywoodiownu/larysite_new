@@ -79,48 +79,27 @@ body, html {
 
 
 
-/* Responsive Design for Tablets */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
+    /* Adjust for tablets */
     .trees-left, .trees-right {
         width: 100vw; /* Full width for smaller screens */
     }
 
     .center-img, .kick-img, .discord-img {
-        width: 30vw; /* Adjusted for better visibility on smaller screens */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .center-img {
-        transform: translate(-50%, -70%);
-    }
-
-    .kick-img {
-        transform: translate(-50%, 50%);
-    }
-
-    .discord-img {
-        transform: translate(-50%, 170%);
+        width: 30vw; /* Adjust size for visibility */
+        transform: translate(-50%, -50%); /* Center the images vertically */
     }
 }
 
-/* Responsive Design for Mobile Phones */
 @media screen and (max-width: 480px) {
+    /* Adjust for mobile phones */
     .center-img, .kick-img, .discord-img {
-        width: 50vw; /* Larger for very small screens */
-        height: auto; /* Maintain aspect ratio */
+        width: 50vw; /* Larger for small screens */
+        transform: translate(-50%, -50%); /* Center the images vertically */
     }
 
-    .center-img {
-        transform: translate(-50%, -80%);
-    }
-
-    .kick-img {
-        transform: translate(-50%, 30%);
-    }
-
-    .discord-img {
-        transform: translate(-50%, 150%);
-    }
+    /* You might want to adjust font sizes, margins, paddings etc. here */
 }
 
 /* Add more styles as needed */
