@@ -10,37 +10,38 @@ window.onload = function() {
     ];
 
     var currentAudioIndex = 0;
+    var audioInitialized = false;
     var audio;
 
-    function playNextAudio() {
-        if (!audio) {
-            audio = new Audio();
-            audio.volume = 0.5;
-            audio.addEventListener('ended', playNextAudio);
-        }
-
-        if (currentAudioIndex >= audioFiles.length) {
-            currentAudioIndex = 0;
-        }
-
+    function initializeAudio() {
+        audio = new Audio();
+        audio.volume = 0.5;
         audio.src = audioFiles[currentAudioIndex];
-        audio.play().then(() => {
-            console.log("Playing:", audioFiles[currentAudioIndex]);
-        }).catch(e => {
-            console.error("Failed to play:", e);
+        audio.addEventListener('ended', function() {
+            currentAudioIndex = (currentAudioIndex + 1) % audioFiles.length;
+            audio.src = audioFiles[currentAudioIndex];
+            audio.play();
         });
-
-        currentAudioIndex++;
+        audioInitialized = true;
     }
 
-    // Spacebar to play/pause
+    function togglePlayPause() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+
+    // Spacebar to initialize and play/pause
     window.addEventListener('keydown', function(e) {
         if (e.keyCode === 32) {
             e.preventDefault();
-            if (!audio || audio.paused) {
-                playNextAudio();
+            if (!audioInitialized) {
+                initializeAudio();
+                audio.play();
             } else {
-                audio.pause();
+                togglePlayPause();
             }
         }
     });
