@@ -17,12 +17,14 @@ window.onload = function() {
         audio = new Audio();
         audio.volume = 0.5;
         audio.src = audioFiles[currentAudioIndex];
-        audio.addEventListener('ended', function() {
-            currentAudioIndex = (currentAudioIndex + 1) % audioFiles.length;
-            audio.src = audioFiles[currentAudioIndex];
-            audio.play();
-        });
+        audio.addEventListener('ended', playNextAudio);
         audioInitialized = true;
+    }
+
+    function playNextAudio() {
+        currentAudioIndex = (currentAudioIndex + 1) % audioFiles.length;
+        audio.src = audioFiles[currentAudioIndex];
+        audio.play();
     }
 
     function togglePlayPause() {
@@ -33,15 +35,20 @@ window.onload = function() {
         }
     }
 
-    // Spacebar to initialize and play/pause
+    // Keydown event listener for spacebar and right arrow
     window.addEventListener('keydown', function(e) {
-        if (e.keyCode === 32) {
+        if (e.keyCode === 32) { // Spacebar
             e.preventDefault();
             if (!audioInitialized) {
                 initializeAudio();
                 audio.play();
             } else {
                 togglePlayPause();
+            }
+        } else if (e.keyCode === 39) { // Right arrow key
+            e.preventDefault();
+            if (audioInitialized) {
+                playNextAudio();
             }
         }
     });
