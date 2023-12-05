@@ -30,11 +30,23 @@ body, html {
 }
 
 .trees-left {
+      position: absolute;
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+    top: 0;
+    z-index: 10;
     left: -50vw; /* Start off-screen, half of the viewport width */
     animation: slideInLeft 2s forwards; /* Animation to slide in */
 }
 
 .trees-right {
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+    top: 0;
+    z-index: 10;
     right: -50vw; /* Start off-screen, half of the viewport width */
     animation: slideInRight 2s forwards; /* Animation to slide in */
 }
@@ -83,18 +95,47 @@ img {
     height: auto;
 }
 
+
 /* Improved Media Queries */
 @media screen and (max-width: 768px) {
-    .center-img, .kick-img, .discord-img {
-        width: 50vw; /* Adjust size for tablet screens */
-        transform: translate(-50%, -50%);
+     .trees-left, .trees-right {
+        width: 65vw; /* Adjust the width for iPads */
+        object-fit: contain; /* Changing object-fit to avoid stretching */
+        /* Other adjustments as needed */
+    }
+
+    .main-content {
+        transform: scale(2.0); /* Adjust the scale value to zoom in (e.g., 2.0 for 100% zoom) */
+        /* Other adjustments as needed */
     }
 }
 
 @media screen and (max-width: 480px) {
-    .center-img, .kick-img, .discord-img {
-        width: 80vw; /* Increase the size for mobile screens */
-        transform: translate(-50%, -50%);
+    .trees-left, .trees-right {
+        width: 65vw; /* Adjust the width for iPads */
+        object-fit: contain; /* Changing object-fit to avoid stretching */
+        /* Other adjustments as needed */
+    }
+
+    .main-content {
+        transform: scale(2.0); /* Adjust the scale value to zoom in (e.g., 2.0 for 100% zoom) */
+        /* Other adjustments as needed */
+    }
+}
+
+
+
+/* Media Query for iPads (including iPad Air) */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .trees-left, .trees-right {
+        width: 65vw; /* Adjust the width for iPads */
+        object-fit: contain; /* Changing object-fit to avoid stretching */
+        /* Other adjustments as needed */
+    }
+
+    .main-content {
+        transform: scale(2.0); /* Adjust the scale value to zoom in (e.g., 2.0 for 100% zoom) */
+        /* Other adjustments as needed */
     }
 }
 
