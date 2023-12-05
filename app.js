@@ -6,7 +6,7 @@ window.onload = function() {
         centerImageLink.classList.remove('disabled');
     });
 
-    // Audio Playback Functionality (Remains unchanged)
+    // Audio Playback Functionality
     var audioFiles = [
         'audio/song1.mp3',
         'audio/song2.mp3',
@@ -34,5 +34,16 @@ window.onload = function() {
     }
 
     audio.addEventListener('ended', playNextAudio);
-    playNextAudio(); // Start playing the first audio file
+
+    // Spacebar to play/pause
+    window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 32) { // Spacebar keycode is 32
+            e.preventDefault(); // Prevent default spacebar action (scrolling)
+            if (audio.paused) {
+                playNextAudio();
+            } else {
+                audio.pause();
+            }
+        }
+    });
 };
