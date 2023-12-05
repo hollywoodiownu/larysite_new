@@ -6,7 +6,7 @@ window.onload = function() {
         centerImageLink.classList.remove('disabled');
     });
 
-    // Audio Playback Functionality
+    // Audio Playback Functionality (Remains unchanged)
     var audioFiles = [
         'audio/song1.mp3',
         'audio/song2.mp3',
@@ -35,15 +35,4 @@ window.onload = function() {
 
     audio.addEventListener('ended', playNextAudio);
     playNextAudio(); // Start playing the first audio file
-
-    // Spacebar to toggle play/pause
-    window.addEventListener('keydown', function(e) {
-        if (e.keyCode === 32) { // Spacebar keycode is 32
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
-    });
 };
