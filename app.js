@@ -1,5 +1,4 @@
-window.onload = function() {
-    // [existing code for centerImageLink]
+
 
     // Audio Playback Functionality
     var audioFiles = [
