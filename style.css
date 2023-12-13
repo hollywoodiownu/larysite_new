@@ -1,4 +1,3 @@
-/* Add your CSS styles here */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,87 +5,58 @@ body, html {
     overflow: hidden; /* Prevent scroll bars */
 }
 
-.main-content {
-    position: fixed;
-    min-height: 100vh; /* Set a minimum height to fill the viewport */
-    width: 100vw;
-    overflow: hidden; /* Prevent scroll bars */
-}
-
-.background-img {
+.main-content, .background-img, .trees-left, .trees-right {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* This will cover the whole area */
+    object-fit: cover;
+}
+
+.main-content {
+    position: fixed;
 }
 
 .trees-left, .trees-right {
-    position: absolute;
-    width: 50vw;  /* 50% of the viewport width */
-    height: 100vh;
-    object-fit: cover;
+    width: 50vw; /* 50% of the viewport width */
     top: 0;
-    z-index: 10; /* To ensure they are above the background image */
+    z-index: 10; /* Above the background image */
+    animation: 2s forwards;
 }
 
 .trees-left {
-      position: absolute;
-    width: 50vw;
-    height: 100vh;
-    object-fit: cover;
-    top: 0;
-    z-index: 10;
-    left: -50vw; /* Start off-screen, half of the viewport width */
-    animation: slideInLeft 2s forwards; /* Animation to slide in */
+    left: -50vw; /* Start off-screen, slide in from left */
+    animation-name: slideInLeft;
 }
 
 .trees-right {
-    position: absolute;
-    width: 50vw;
-    height: 100vh;
-    object-fit: cover;
-    top: 0;
-    z-index: 10;
-    right: -50vw; /* Start off-screen, half of the viewport width */
-    animation: slideInRight 2s forwards; /* Animation to slide in */
+    right: -50vw; /* Start off-screen, slide in from right */
+    animation-name: slideInRight;
 }
 
-.center-img {
+.center-img, .kick-img, .discord-img {
     position: fixed;
     top: 50vh; /* Center vertically */
     left: 50vw; /* Center horizontally */
-    transform: translate(-50%, -60%); /* Adjust vertical position */
-    z-index: 20; /* Ensure it's above the other images */
-    opacity: 0; /* Start with the image being transparent */
-    animation: fadeIn 2s ease 2s forwards; /* Fade in after 2 seconds */
-    width: 20vw; /* 20% of the viewport width */
-    height: auto; /* Maintain aspect ratio */
+    z-index: 20; /* Above other images */
+    opacity: 0; /* Start transparent */
+    animation: fadeIn 2s ease 2s forwards; /* Fade in */
+}
+
+.center-img {
+    transform: translate(-50%, -60%);
+    width: 20vw;
 }
 
 .kick-img {
-    position: fixed; /* Changed from absolute to fixed */
-    top: 50vh; /* 70% from the top of the viewport */
-    left: 50vw; /* Centered horizontally */
     transform: translate(-50%, 120%);
-    z-index: 21;
-    width: 5vw; /* 5% of the viewport width */
-    height: auto;
+    width: 5vw;
     cursor: pointer;
-    opacity: 0;
-    animation: fadeIn 2s ease 2s forwards;
 }
 
 .discord-img {
-    position: fixed; /* Changed from absolute to fixed */
-    top: 50vh; /* 70% from the top of the viewport */
-    left: 50vw; /* Centered horizontally */
     transform: translate(-50%, 190%);
-    z-index: 21;
-    width: 5vw; /* 5% of the viewport width */
-    height: auto;
+    width: 5vw;
     cursor: pointer;
-    opacity: 0;
-    animation: fadeIn 2s ease 2s forwards;
 }
 
 /* Responsive Images */
