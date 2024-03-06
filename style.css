@@ -30,7 +30,6 @@ body, html {
     top: 10vh; /* Adjust this value to bring the trees down a bit */
     z-index: 10; /* Above the background image */
     animation: 2s forwards;
-    box-shadow: 0 0 15px 10px #e0cda9; /* Example sandy color, adjust as needed */
 }
 
 .duck {
@@ -45,11 +44,15 @@ body, html {
 .trees-left {
     left: -50vw; /* Start off-screen, slide in from left */
     animation-name: slideInLeft;
+    box-shadow: 0 0 15px 10px #e0cda9; /* Example sandy color, adjust as needed */
+
 }
 
 .trees-right {
     right: -50vw; /* Start off-screen, slide in from right */
     animation-name: slideInRight;
+    box-shadow: 0 0 15px 10px #e0cda9; /* Example sandy color, adjust as needed */
+
 }
 
 .kick-img, .center-img, .discord-img {
