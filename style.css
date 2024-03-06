@@ -42,13 +42,13 @@ body, html {
     animation-name: slideInRight;
 }
 
-.kick-img, .discord-img, .center-img {
-    position: fixed;
+.kick-img, .center-img, .discord-img {
+    position: absolute;
     bottom: 10px; /* Adjust as needed */
     width: 80px; /* Set a fixed width */
     height: auto; /* Maintain aspect ratio */
     opacity: 1; /* Make fully visible */
-    animation: none; /* Remove animation */
+    cursor: pointer;
 }
 
 
