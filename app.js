@@ -1,5 +1,6 @@
 window.onload = function() {
     var audioFiles = ['audio/song1.mp3', 'audio/song2.mp3', 'audio/song3.mp3'];
+    var duckElement = document.getElementById('duck-img');
     var duckSound = new Audio('audio/ducksoundnew.mp3'); // Replace with the correct path to your duck sound
     var currentAudioIndex = 0;
     var audioInitialized = false;
@@ -25,19 +26,20 @@ window.onload = function() {
         audio.paused ? audio.play() : audio.pause();
     }
 
+    // Event listener for spacebar and right arrow key
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode === 32 || e.keyCode === 39) { // Spacebar or Right Arrow
+            e.preventDefault();
+            togglePlayPause();
+        }
+    });
+
     // Disable Ctrl+Plus, Ctrl+Minus, Ctrl+Mousewheel for zoom control
     document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey === true || e.metaKey === true) && (e.which === 61 || e.which === 107 || e.which === 173 || e.which === 109 || e.which === 187  || e.which === 189 )) {
             e.preventDefault();
         }
     }, false);
-
-    document.addEventListener('keydown', function(e) {
-        if (e.keyCode === 32) { // Spacebar
-            e.preventDefault();
-            togglePlayPause();
-        }
-    });
 
     // Disable pinch zoom
     document.addEventListener('wheel', function(e) {
