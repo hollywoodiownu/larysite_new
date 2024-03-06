@@ -27,7 +27,7 @@ body, html {
 
 .trees-left, .trees-right {
     width: 50vw; /* 50% of the viewport width */
-    top: 0vh; /* Adjust this value to bring the trees down a bit */
+    top: 60vh; /* Adjust this value to bring the trees down a bit */
     z-index: 10; /* Above the background image */
     animation: 2s forwards;
 }
@@ -44,13 +44,13 @@ body, html {
 .trees-left {
     left: -50vw; /* Start off-screen, slide in from left */
     animation-name: slideInLeft;
-    filter: blur(2px); /* Adjust the px value to increase/decrease the blur */
+    filter: blur(3px); /* Adjust the px value to increase/decrease the blur */
 }
 
 .trees-right {
     right: -50vw; /* Start off-screen, slide in from right */
     animation-name: slideInRight;
-    filter: blur(2px); /* Adjust the px value to increase/decrease the blur */
+    filter: blur(3px); /* Adjust the px value to increase/decrease the blur */
 }
 
 .kick-img, .center-img, .discord-img {
