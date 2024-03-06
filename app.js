@@ -33,6 +33,13 @@ window.onload = function() {
         }
     }, false);
 
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode === 32 || e.keyCode === 39) { // Spacebar or Right Arrow
+            e.preventDefault();
+            togglePlayPause();
+        }
+    });
+
     // Disable pinch zoom
     document.addEventListener('wheel', function(e) {
         if (e.ctrlKey === true) {
