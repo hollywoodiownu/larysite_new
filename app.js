@@ -6,6 +6,7 @@ window.onload = function() {
     var audioInitialized = false;
     var audio = new Audio();
     audio.volume = 0.5;
+    var isPlaying = false;
 
     function playNextAudio() {
         currentAudioIndex = (currentAudioIndex + 1) % audioFiles.length;
@@ -23,7 +24,12 @@ window.onload = function() {
             audio.addEventListener('ended', playNextAudio);
             audioInitialized = true;
         }
-        audio.paused ? audio.play() : audio.pause();
+        if (isPlaying) {
+            audio.pause();
+        } else {
+            audio.play();
+        }
+        isPlaying = !isPlaying;
     }
 
     // Disable Ctrl+Plus, Ctrl+Minus, Ctrl+Mousewheel for zoom control
