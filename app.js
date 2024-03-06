@@ -1,12 +1,10 @@
 window.onload = function() {
     var audioFiles = ['audio/song1.mp3', 'audio/song2.mp3', 'audio/song3.mp3'];
-    var duckElement = document.getElementById('duck-img');
     var duckSound = new Audio('audio/ducksoundnew.mp3'); // Replace with the correct path to your duck sound
     var currentAudioIndex = 0;
     var audioInitialized = false;
     var audio = new Audio();
     audio.volume = 0.5;
-    var isPlaying = false;
 
     function playNextAudio() {
         currentAudioIndex = (currentAudioIndex + 1) % audioFiles.length;
@@ -24,12 +22,7 @@ window.onload = function() {
             audio.addEventListener('ended', playNextAudio);
             audioInitialized = true;
         }
-        if (isPlaying) {
-            audio.pause();
-        } else {
-            audio.play();
-        }
-        isPlaying = !isPlaying;
+        audio.paused ? audio.play() : audio.pause();
     }
 
     // Disable Ctrl+Plus, Ctrl+Minus, Ctrl+Mousewheel for zoom control
