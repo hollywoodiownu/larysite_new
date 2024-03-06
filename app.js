@@ -1,5 +1,7 @@
 window.onload = function() {
     var audioFiles = ['audio/song1.mp3', 'audio/song2.mp3', 'audio/song3.mp3'];
+    var duckElement = document.getElementById('duck-img');
+    var duckSound = new Audio('audio/ducksoundnew.mp3'); // Replace with the correct path to your duck sound
     var currentAudioIndex = 0;
     var audioInitialized = false;
     var audio = new Audio();
@@ -10,6 +12,10 @@ window.onload = function() {
         audio.src = audioFiles[currentAudioIndex];
         audio.play();
     }
+
+    duckElement.addEventListener('click', function() {
+        duckSound.play();
+    });
 
     function togglePlayPause() {
         if (!audioInitialized) {
