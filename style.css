@@ -44,15 +44,13 @@ body, html {
 .trees-left {
     left: -50vw; /* Start off-screen, slide in from left */
     animation-name: slideInLeft;
-    box-shadow: 0 0 15px 10px #e0cda9; /* Example sandy color, adjust as needed */
-
+    filter: blur(8px); /* Adjust the px value to increase/decrease the blur */
 }
 
 .trees-right {
     right: -50vw; /* Start off-screen, slide in from right */
     animation-name: slideInRight;
-    box-shadow: 0 0 15px 10px #e0cda9; /* Example sandy color, adjust as needed */
-
+    filter: blur(8px); /* Adjust the px value to increase/decrease the blur */
 }
 
 .kick-img, .center-img, .discord-img {
