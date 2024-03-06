@@ -34,7 +34,7 @@ window.onload = function() {
     }, false);
 
     document.addEventListener('keydown', function(e) {
-        if (e.keyCode === 32 || e.keyCode === 39) { // Spacebar or Right Arrow
+        if (e.keyCode === 32) { // Spacebar
             e.preventDefault();
             togglePlayPause();
         }
