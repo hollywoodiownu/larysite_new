@@ -1,5 +1,5 @@
 window.onload = function() {
-    var audioFiles = ['H:/larysite_new/audio/song1.mp3', 'H:/larysite_new/audio/song2.mp3', 'H:/larysite_new/audio/song3.mp3'];
+    var audioFiles = ['audio/song1.mp3', 'audio/song2.mp3', 'audio/song3.mp3'];
     var currentAudioIndex = 0;
     var audioInitialized = false;
     var audio = new Audio();
@@ -24,10 +24,6 @@ window.onload = function() {
     document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey === true || e.metaKey === true) && (e.which === 61 || e.which === 107 || e.which === 173 || e.which === 109 || e.which === 187  || e.which === 189 )) {
             e.preventDefault();
-        }
-        // Toggle music on/off with spacebar
-        if (e.key === ' ' || e.code === 'Space') {
-            togglePlayPause();
         }
     }, false);
 
