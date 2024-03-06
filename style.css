@@ -27,7 +27,7 @@ body, html {
 
 .trees-left, .trees-right {
     width: 50vw; /* 50% of the viewport width */
-    top: 60vh; /* Adjust this value to bring the trees down a bit */
+    top: 40vh; /* Adjust this value to bring the trees down a bit */
     z-index: 10; /* Above the background image */
     animation: 2s forwards;
 }
@@ -67,7 +67,7 @@ body, html {
     left: calc(50% + 80px); /* Adjust position */
 }
 
-.kick-img:hover, .discord-img:hover {
+.kick-img:hover, .center-img:hover, .duck-img:hover, .discord-img:hover {
     transform: scale(1.1);
     opacity: 0.8;
 }
