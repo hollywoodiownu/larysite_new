@@ -30,6 +30,7 @@ body, html {
     top: 10vh; /* Adjust this value to bring the trees down a bit */
     z-index: 10; /* Above the background image */
     animation: 2s forwards;
+    box-shadow: 0 0 15px 10px #e0cda9; /* Example sandy color, adjust as needed */
 }
 
 .duck {
