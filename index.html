@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Container UI</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hollywoodiownu LaryGaryMods</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="web-container" id="web-container">
-        <div class="side left">
-            <img src="img/left.png" alt="Left">
+    <div class="main-content">
+        <!-- Images with loading="lazy" for better performance -->
+        <img src="https://shorturl.at/rxJZ3" alt="" class="background-img" loading="lazy">
+        <img src="https://shorturl.at/eEST5" alt="" class="trees-left" loading="lazy">
+        <img src="https://shorturl.at/sGSZ9" alt="" class="trees-right" loading="lazy">
+
+        <div id="centerImageLink" class="disabled">
+            <a href="https://larygary.tebex.io/" target="_blank">
+                <img src="https://shorturl.at/moIY2" alt="Center Image" class="center-img" loading="lazy">
+            </a>
         </div>
-        <div class="side right">
-            <img src="img/right.png" alt="Right">
+
+        <div id="kick-img" class="disabled">
+            <a href="https://www.kick.com/hollywoodiownu" target="_blank">
+                <img src="https://shorturl.at/msJU6" alt="Kick Image" class="kick-img" loading="lazy">
+            </a>
         </div>
-        <div class="bottom">
-            <a href="https://larygary.tebex.io/" target="_blank"><img src="img/tebex.png" alt="Tebex"></a>
-            <a href="https://www.kick.com/hollywoodiownu" target="_blank"><img src="img/kick.png" alt="Kick"></a>
-            <a href="https://discord.gg/NwQ6CWvHFj" target="_blank"><img src="img/discord.png" alt="Discord"></a>
+
+        <div id="discord-img" class="disabled">
+            <a href="https://discord.gg/NwQ6CWvHFj" target="_blank">
+                <img src="https://shorturl.at/divzK" alt="Discord Image" class="discord-img" loading="lazy">
+            </a>
         </div>
+        
+        <!-- Main Content Here -->
     </div>
     <script src="app.js"></script>
 </body>
