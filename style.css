@@ -42,18 +42,18 @@ body, html {
     animation-name: slideInRight;
 }
 
-.center-img, .kick-img, .discord-img {
+.kick-img, .discord-img, .center-img {
     position: fixed;
-    top: 50vh; /* Center vertically */
-    left: 50vw; /* Center horizontally */
-    z-index: 20; /* Above other images */
-    opacity: 0; /* Start transparent */
-    animation: fadeIn 2s ease 2s forwards; /* Fade in */
+    bottom: 10px; /* Adjust as needed */
+    width: 80px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 1; /* Make fully visible */
+    animation: none; /* Remove animation */
 }
 
+
 .center-img {
-    transform: translate(-50%, -60%);
-    width: 20vw;
+    left: calc(50% + 40px); /* Adjust position */
 }
 
 .kick-img:hover, .discord-img:hover {
@@ -63,14 +63,14 @@ body, html {
 
 
 .kick-img {
-    transform: translate(-50%, 120%);
-    width: 5vw;
+    left: calc(50% - 120px); /* Adjust position */
     cursor: pointer;
 }
 
+
 .discord-img {
-    transform: translate(-50%, 190%);
-    width: 5vw;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
     cursor: pointer;
 }
 /* Responsive Images */
