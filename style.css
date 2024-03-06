@@ -14,7 +14,7 @@ body, html {
     overflow: hidden; /* Prevent scroll bars */
 }
 
-.main-content, .background-img, .trees-left, .trees-right, .duck, .kick-img, .center-img, .discord-img {
+.main-content, .background-img, .trees-left, .trees-right {
     position: absolute;
     width: 100vw;
     height: 100vh;
