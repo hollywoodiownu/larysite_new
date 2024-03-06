@@ -27,7 +27,7 @@ body, html {
 
 .trees-left, .trees-right {
     width: 50vw; /* 50% of the viewport width */
-    top: 90;
+    top: 10vh; /* Adjust this value to bring the trees down a bit */
     z-index: 10; /* Above the background image */
     animation: 2s forwards;
 }
