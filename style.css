@@ -32,6 +32,14 @@ body, html {
     animation: 2s forwards;
 }
 
+.duck {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 .trees-left {
     left: -50vw; /* Start off-screen, slide in from left */
     animation-name: slideInLeft;
