@@ -53,7 +53,8 @@ body, html {
 
 
 .center-img {
-    left: calc(50% + 40px); /* Adjust position */
+    left: calc(50% - 120px); /* Adjust position */
+    cursor: pointer;
 }
 
 .kick-img:hover, .discord-img:hover {
@@ -69,8 +70,7 @@ body, html {
 
 
 .discord-img {
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    left: calc(50% - 120px); /* Adjust position */
     cursor: pointer;
 }
 /* Responsive Images */
