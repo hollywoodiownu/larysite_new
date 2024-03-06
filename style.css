@@ -37,7 +37,9 @@ body, html {
     top: 50%;
     left: 50%;
     z-index: 10; /* Above the background image */
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);	  
+	position: fixed;
+
 }
 
 
@@ -63,6 +65,7 @@ body, html {
 
 .center-img {
     left: calc(50% + 80px); /* Adjust position */
+	    position: fixed;
 }
 
 .kick-img:hover, .discord-img:hover {
@@ -73,10 +76,12 @@ body, html {
 
 .kick-img {
     left: calc(50% - 160px); /* Adjust position */
+	    position: fixed;
 }
 
 .discord-img {
     left: calc(50% - 40px); /* Center horizontally */
+	    position: fixed;
 }
 
 /* Responsive Images */
