@@ -20,10 +20,27 @@ window.onload = function() {
         audio.paused ? audio.play() : audio.pause();
     }
 
-    window.addEventListener('keydown', function(e) {
-        if (e.keyCode === 32 || e.keyCode === 39) { // Spacebar or Right Arrow
+    // Disable Ctrl+Plus, Ctrl+Minus, Ctrl+Mousewheel for zoom control
+    document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey === true || e.metaKey === true) && (e.which === 61 || e.which === 107 || e.which === 173 || e.which === 109 || e.which === 187  || e.which === 189 )) {
             e.preventDefault();
-            togglePlayPause();
         }
-    });
+    }, false);
+
+    // Disable pinch zoom
+    document.addEventListener('wheel', function(e) {
+        if (e.ctrlKey === true) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Disable double-tap zoom for touch devices
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(e) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            e.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
 };
