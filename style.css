@@ -74,7 +74,7 @@ body, html {
 }
 
 .kick-img {
-    left: calc(50% - 120px); /* Adjust position */
+    left: calc(50% - 180px); /* Adjust position */
 }
 
 .discord-img {
