@@ -40,6 +40,14 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
+.bird {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9; /* Above the background image */
+    transform: translate(-50%, -50%);
+}
+
 .trees-left {
     left: -50vw; /* Start off-screen, slide in from left */
     animation-name: slideInLeft;
