@@ -86,7 +86,7 @@ body, html {
 }
 
 .youtube-img {
-    left: calc(50% + 200px); /* Adjust position */
+    left: calc(50% + 180px); /* Adjust position */
 }
 
 /* Responsive Images */
