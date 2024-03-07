@@ -67,7 +67,7 @@ body, html {
 }
 
 .instagram-img {
-    left: calc(50% - 360px); /* Position to the left of center */
+    left: calc(50% - 300px); /* Position to the left of center */
 }
 
 .youtube-img {
@@ -79,11 +79,11 @@ body, html {
 }
 
 .discord-img {
-    left: calc(50% - 10px); /* Position to the left of center */
+    left: calc(50% - 20px); /* Position to the left of center */
 }
 
 .center-img {
-    left: calc(50% + 100px); /* Position to the left of center */
+    left: calc(50% + 120px); /* Position to the left of center */
 }
 
 
