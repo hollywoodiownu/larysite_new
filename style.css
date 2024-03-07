@@ -61,13 +61,19 @@ body, html {
     cursor: pointer;
 }
 
-.center-img {
-    left: calc(50% + 80px); /* Adjust position */
-}
 
 .kick-img:hover, .center-img:hover, .duck-img:hover, .discord-img:hover, .instagram-img:hover, .youtube-img:hover {
     transform: scale(1.1);
     opacity: 0.8;
+}
+
+
+.youtube-img {
+    left: calc(50% - 280px); /* Adjust position */
+}
+
+.instagram-img {
+    left: calc(50% - 400px); /* Adjust position */
 }
 
 .kick-img {
@@ -77,6 +83,11 @@ body, html {
 .discord-img {
     left: calc(50% - 40px); /* Center horizontally */
 }
+
+.center-img {
+    left: calc(50% + 80px); /* Adjust position */
+}
+
 
 /* Responsive Images */
 img {
