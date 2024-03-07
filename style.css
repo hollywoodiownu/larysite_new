@@ -66,25 +66,26 @@ body, html {
     opacity: 0.8;
 }
 
-/* Assuming the width of each image (W) is 80px */
+/* Assume each image width is W pixels and gap between images is G pixels */
 .instagram-img {
-    left: calc(50% - 2 * 80px - 2 * 10px); /* 2 images and 2 gaps to the left of center */
+    left: calc(50% - (2W + 3G/2)); /* Move to the left: 2 image widths plus 1.5 gaps */
 }
 
 .youtube-img {
-    left: calc(50% - 80px - 10px); /* 1 image and 1 gap to the left of center */
+    left: calc(50% - (W + G/2)); /* Move to the left: 1 image width plus 0.5 gap */
 }
 
 .kick-img {
-    left: calc(50%); /* Centered */
+    left: 50%; /* Center */
+    transform: translateX(-50%); /* Align the center of the image with the center of the container */
 }
 
 .discord-img {
-    left: calc(50% + 80px + 10px); /* 1 image and 1 gap to the right of center */
+    left: calc(50% + (W + G/2)); /* Move to the right: 1 image width plus 0.5 gap */
 }
 
 .center-img {
-    left: calc(50% + 2 * 80px + 2 * 10px); /* 2 images and 2 gaps to the right of center */
+    left: calc(50% + (2W + 3G/2)); /* Move to the right: 2 image widths plus 1.5 gaps */
 }
 
 
