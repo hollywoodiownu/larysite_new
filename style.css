@@ -68,24 +68,24 @@ body, html {
 }
 
 
-.youtube-img {
-    left: calc(50% - 280px); /* Adjust position */
+.instagram-img {
+    left: calc(50% - 320px); /* Position to the left of center */
 }
 
-.instagram-img {
-    left: calc(50% - 400px); /* Adjust position */
+.youtube-img {
+    left: calc(50% - 160px); /* Position to the left of center */
 }
 
 .kick-img {
-    left: calc(50% - 160px); /* Adjust position */
+    left: calc(50% - 80px); /* Position to the left of center */
 }
 
 .discord-img {
-    left: calc(50% - 40px); /* Center horizontally */
+    left: calc(50%); /* Centered */
 }
 
 .center-img {
-    left: calc(50% + 80px); /* Adjust position */
+    left: calc(50% + 80px); /* Position to the right of center */
 }
 
 
