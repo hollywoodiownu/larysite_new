@@ -69,24 +69,27 @@ body, html {
 
 
 
+/* Assuming W is 60px and G is 20px */
+
 .instagram-img {
-    left: calc(50% - 240px); /* Adjust position */
+    left: calc(50% - (2*W + 2*G)); /* Adjust position */
 }
 
 .kick-img {
-    left: calc(50% - 150px); /* Adjust position */
+    left: calc(50% - (W + G)); /* Adjust position */
 }
 
 .discord-img {
-    left: calc(50% - 50px); /* Center horizontally */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-W/2); /* Adjust for half the width of the image to truly center it */
 }
 
 .center-img {
-    left: calc(50% + 80px); /* Adjust position */
+    left: calc(50% + G); /* Adjust position */
 }
 
 .youtube-img {
-    left: calc(50% + 200px); /* Adjust position */
+    left: calc(50% + (W + G)); /* Adjust position */
 }
 
 /* Responsive Images */
