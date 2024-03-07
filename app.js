@@ -13,6 +13,12 @@ window.onload = function() {
         audio.play();
     }
 
+    function playPreviousAudio() {
+        currentAudioIndex = (currentAudioIndex - 1 + audioFiles.length) % audioFiles.length;
+        audio.src = audioFiles[currentAudioIndex];
+        audio.play();
+    }
+
     function togglePlayPause() {
         if (!audioInitialized) {
             audio.src = audioFiles[currentAudioIndex];
@@ -27,10 +33,14 @@ window.onload = function() {
         duckSound.play();
     });
 
-    // Space key to toggle play/pause
+    // Space key to toggle play/pause, left and right arrows to change songs
     document.addEventListener('keydown', function(e) {
         if (e.code === 'Space') {
             togglePlayPause();
+        } else if (e.code === 'ArrowRight') {
+            playNextAudio();
+        } else if (e.code === 'ArrowLeft') {
+            playPreviousAudio();
         }
     });
 
