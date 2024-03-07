@@ -74,7 +74,7 @@ body, html {
 }
 
 .kick-img {
-    left: calc(50% - 160px); /* Adjust position */
+    left: calc(50% - 120px); /* Adjust position */
 }
 
 .discord-img {
@@ -86,7 +86,7 @@ body, html {
 }
 
 .youtube-img {
-    left: calc(50% + 160px); /* Adjust position */
+    left: calc(50% + 200px); /* Adjust position */
 }
 
 /* Responsive Images */
