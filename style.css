@@ -78,7 +78,7 @@ body, html {
 }
 
 .discord-img {
-    left: calc(50% - 50px); /* Center horizontally */
+    left: calc(50% - 40px); /* Center horizontally */
 }
 
 .center-img {
