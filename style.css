@@ -13,7 +13,7 @@ body, html {
     overflow: hidden; /* Prevent scroll bars */
 }
 
-.main-content, .background-img, .trees-left, .trees-right, .bird-img, {
+.main-content, .background-img, .trees-left, .trees-right {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -44,7 +44,7 @@ body, html {
     position: fixed;
     top: 50%;
     left: 50%;
-    z-index: 10; /* Above the background image */
+    z-index: 11; /* Above the background image */
     transform: translate(-50%, -50%);
 }
 
