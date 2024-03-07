@@ -69,15 +69,15 @@ body, html {
 
 
 .instagram-img {
-    left: calc(50% - 320px); /* Position to the left of center */
+    left: calc(50% - 322px); /* Position to the left of center */
 }
 
 .youtube-img {
-    left: calc(50% - 160px); /* Position to the left of center */
+    left: calc(50% - 162px); /* Position to the left of center */
 }
 
 .kick-img {
-    left: calc(50% - 80px); /* Position to the left of center */
+    left: calc(50% - 82px); /* Position to the left of center */
 }
 
 .discord-img {
@@ -85,7 +85,7 @@ body, html {
 }
 
 .center-img {
-    left: calc(50% + 80px); /* Position to the right of center */
+    left: calc(50% + 82px); /* Position to the right of center */
 }
 
 
