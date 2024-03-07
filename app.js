@@ -1,11 +1,11 @@
 window.onload = function() {
-    var audioFiles = ['H:\\larysite_new\\audio\\song1.mp3', 'H:\\larysite_new\\audio\\song2.mp3', 'H:\\larysite_new\\audio\\song3.mp3'];
+    var audioFiles = ['song1.mp3', 'song2.mp3', 'song3.mp3'];
     var currentAudioIndex = 0;
     var audioInitialized = false;
     var audio = new Audio();
     audio.volume = 0.5;
 
-    var duckSound = new Audio('H:\\larysite_new\\audio\\ducksoundnew.mp3');
+    var duckSound = new Audio('ducksoundnew.mp3');
 
     function playNextAudio() {
         currentAudioIndex = (currentAudioIndex + 1) % audioFiles.length;
