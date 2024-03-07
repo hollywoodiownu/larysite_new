@@ -4,7 +4,6 @@
     --font-size-large: 1.5rem;
 }
 
-
 body, html {
     margin: 0;
     padding: 0;
@@ -30,6 +29,7 @@ body, html {
     top: 40vh; /* Adjust this value to bring the trees down a bit */
     z-index: 10; /* Above the background image */
     animation: 2s forwards;
+    will-change: transform; /* Optimize for transform changes */
 }
 
 .duck {
@@ -39,7 +39,6 @@ body, html {
     z-index: 10; /* Above the background image */
     transform: translate(-50%, -50%);
 }
-
 
 .trees-left {
     left: -50vw; /* Start off-screen, slide in from left */
@@ -62,7 +61,6 @@ body, html {
     cursor: pointer;
 }
 
-
 .center-img {
     left: calc(50% + 80px); /* Adjust position */
 }
@@ -71,7 +69,6 @@ body, html {
     transform: scale(1.1);
     opacity: 0.8;
 }
-
 
 .kick-img {
     left: calc(50% - 160px); /* Adjust position */
@@ -87,59 +84,46 @@ img {
     height: auto;
 }
 
-
 /* Improved Media Queries */
 @media screen and (max-width: 768px) {
-     .trees-left, .trees-right {
-        width: 65vw; /* Adjust the width for iPads */
+    .trees-left, .trees-right {
+        width: 65vw; /* Adjust the width for smaller screens */
         object-fit: contain; /* Changing object-fit to avoid stretching */
-        /* Other adjustments as needed */
     }
 
     .main-content {
-        transform: scale(2.0); /* Adjust the scale value to zoom in (e.g., 2.0 for 100% zoom) */
-        /* Other adjustments as needed */
+        transform: scale(2.0); /* Adjust the scale value for zoom */
     }
 }
 
 @media screen and (max-width: 480px) {
     .trees-left, .trees-right {
-        width: 65vw; /* Adjust the width for iPads */
+        width: 65vw; /* Adjust the width for smaller screens */
         object-fit: contain; /* Changing object-fit to avoid stretching */
-        /* Other adjustments as needed */
     }
 
     .main-content {
-        transform: scale(2.0); /* Adjust the scale value to zoom in (e.g., 2.0 for 100% zoom) */
-        /* Other adjustments as needed */
-    }
-}
-
-
-
-/* Media Query for iPads (including iPad Air) */
-@media screen and (min-width: 481px) and (max-width: 1024px) {
-    .trees-left, .trees-right {
-        width: 65vw; /* Adjust the width for iPads */
-        object-fit: contain; /* Changing object-fit to avoid stretching */
-        /* Other adjustments as needed */
+        transform: scale(2.0); /* Adjust the scale value for zoom */
     }
 
-    .main-content {
-        transform: scale(2.0); /* Adjust the scale value to zoom in (e.g., 2.0 for 100% zoom) */
-        /* Other adjustments as needed */
-    }
-}
-
-@media screen and (max-width: 480px) {
     body {
         font-size: 14px;
         line-height: 1.4;
     }
 }
 
+/* Media Query for iPads (including iPad Air) */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .trees-left, .trees-right {
+        width: 65vw; /* Adjust the width for iPads */
+        object-fit: contain; /* Changing object-fit to avoid stretching */
+    }
 
-/* Add more styles as needed */
+    .main-content {
+        transform: scale(2.0); /* Adjust the scale value for zoom */
+    }
+}
+
 @keyframes slideInLeft {
     to { left: -25%; } /* Stop halfway towards the center */
 }
