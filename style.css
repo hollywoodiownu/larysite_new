@@ -67,23 +67,23 @@ body, html {
 }
 
 .instagram-img {
-    left: calc(50% - 340px); /* Position to the left of center */
+    left: calc(50% - 280px); /* Position to the left of center */
 }
 
 .youtube-img {
-    left: calc(50% - 240px); /* Position to the left of center */
+    left: calc(50% - 160px); /* Position to the left of center */
 }
 
 .kick-img {
-    left: calc(50% - 140px); /* Position to the left of center */
+    left: calc(50% - 100px); /* Position to the left of center */
 }
 
 .discord-img {
-    left: calc(50% - 40px); /* Position to the left of center */
+    left: calc(50% - 0px); /* Position to the left of center */
 }
 
 .center-img {
-    left: calc(50% + 140px); /* Position to the left of center */
+    left: calc(50% + 160px); /* Position to the left of center */
 }
 
 
