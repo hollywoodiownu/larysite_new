@@ -52,7 +52,7 @@ body, html {
     filter: blur(3px); /* Adjust the px value to increase/decrease the blur */
 }
 
-.kick-img, .center-img, .discord-img {
+.kick-img, .center-img, .discord-img, .instagram-img, .youtube-img {
     position: fixed;
     bottom: 10px; /* Adjust as needed */
     width: 80px; /* Set a fixed width */
@@ -65,7 +65,7 @@ body, html {
     left: calc(50% + 80px); /* Adjust position */
 }
 
-.kick-img:hover, .center-img:hover, .duck-img:hover, .discord-img:hover {
+.kick-img:hover, .center-img:hover, .duck-img:hover, .discord-img:hover, .instagram-img:hover, .youtube-img:hover {
     transform: scale(1.1);
     opacity: 0.8;
 }
