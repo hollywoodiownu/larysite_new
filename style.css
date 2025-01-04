@@ -28,7 +28,7 @@ body, html {
     width: 50vw; /* 50% of the viewport width */
     top: 40vh; /* Adjust this value to bring the trees down a bit */
     z-index: 10; /* Above the background image */
-    animation: 2s forwards;
+    animation: 1s forwards;
     will-change: transform; /* Optimize for transform changes */
 }
 
@@ -148,3 +148,4 @@ img {
 @keyframes fadeIn {
     to { opacity: 1; } /* Fade to fully visible */
 }
+
