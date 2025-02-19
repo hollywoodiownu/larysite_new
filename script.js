@@ -202,3 +202,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.cursor = `url('${cursorPng}') 25 25, auto`;
     };
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector(".container");
+
+    // Mobile-specific fix
+    if (window.innerWidth <= 768) {
+        setTimeout(() => {
+            container.classList.add("show");
+        }, 150); // Slight delay for smooth animation
+    }
+});
