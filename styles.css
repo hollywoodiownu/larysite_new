@@ -118,7 +118,7 @@ body {
 /* 🔥 Fixed Button Width & Position */
 .link {
     text-decoration: none;
-    background: rgba(0, 201, 87, 0.6); /* Slightly darker green with same opacity */
+    background: rgba(0, 0, 0, 0.7);
     padding: 1rem;
     border-radius: 0.75rem;
     color: white;
@@ -166,7 +166,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(0, 255, 127, 0.8); /* Same opacity as background */
+    background: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     border-radius: 8px;
     color: white;
@@ -187,7 +187,7 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    background: rgba(255, 65, 108, 0.8); /* Adjusted to match background opacity */
+    background: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     border-radius: 8px;
     color: white;
