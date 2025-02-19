@@ -114,3 +114,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const cursorCur = "https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur";
+    const cursorPng = "https://hollywoodiownu.github.io/larysite_new/img/wand_1.png";
+
+    // Test if .cur works
+    let testCursor = new Image();
+    testCursor.src = cursorCur;
+    testCursor.onload = function () {
+        document.body.style.cursor = `url('${cursorCur}'), auto`;
+    };
+    testCursor.onerror = function () {
+        console.warn("CUR file failed, falling back to PNG...");
+        document.body.style.cursor = `url('${cursorPng}') 25 25, auto`;
+    };
+});
