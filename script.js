@@ -87,3 +87,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // ✅ Set the custom cursor
+    document.body.style.cursor = "url('img/wand_1.cur'), auto";
+
+    // 🔥 Magic Mouse Trail Effect
+    document.addEventListener("mousemove", function (e) {
+        for (let i = 0; i < 3; i++) { // Creates 3 particles per move
+            let trail = document.createElement("div");
+            trail.classList.add("magic-trail");
+            document.body.appendChild(trail);
+
+            // Random offset for a more natural effect
+            let offsetX = (Math.random() - 0.5) * 20;
+            let offsetY = (Math.random() - 0.5) * 20;
+
+            // Set position
+            trail.style.left = `${e.clientX + offsetX}px`;
+            trail.style.top = `${e.clientY + offsetY}px`;
+
+            // Remove after animation
+            setTimeout(() => {
+                trail.remove();
+            }, 800);
+        }
+    });
+});
