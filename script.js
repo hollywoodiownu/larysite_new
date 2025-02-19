@@ -115,3 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.style.cursor = "url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur'), auto";
+
+    setTimeout(() => {
+        document.body.style.cursor = "url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.png') 25 25, auto";
+    }, 500); // Delays PNG fallback in case .cur loads
+});
