@@ -204,6 +204,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+/********************************************************
+ * 🔥 Setting for phones (Phone Extra)
+ ********************************************************/
+
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
 
