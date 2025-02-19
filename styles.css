@@ -1,3 +1,12 @@
+/* 🔥 Prevent Text Highlighting */
+* {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Standard */
+}
+
+
 @font-face {
     font-family: 'Berani';
     src: url('img/Berani.otf') format('opentype');
@@ -142,25 +151,60 @@ body, html {
     justify-content: center;
 }
 
-/* 🔥 Fixed Button Width & Position */
+/* 🔥 Link Container */
 .link {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between icon & text */
     text-decoration: none;
     background: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
-    border-radius: 0.75rem;
+    padding: 12px 20px;
+    border-radius: 30px; /* Makes it more rounded */
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     width: 90%; /* Ensures buttons take full width but don't overflow */
+    max-width: 350px; /* Prevent extreme stretching */
+    height: 55px; /* Keeps buttons the same height */
+    padding-left: 10px; /* ✅ Tiny left shift */
+    justify-content: center; /* ✅ Centers everything */
     text-align: center;
 }
 
+/* 🔥 Circular Icons */
+.link-icon {
+    width: 40px;  /* Adjust icon size */
+    height: 40px;
+    border-radius: 50%; /* Ensures circular shape */
+    background: white; /* White circle background */
+    padding: 5px; /* Space inside the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔥 Centered but Slightly Shifted Left */
+.link span {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ✅ Keeps text centered */
+    flex-grow: 1;
+    transform: translateX(-20px); /* ✅ Moves text left slightly */
+    font-family: "Franklin Gothic Heavy", sans-serif;
+
+}
+
+
+
+/* 🔥 Hover Effect */
 .link:hover {
-    background: rgba(0, 201, 87, 0.6); /* Slightly darker green with same opacity */
+    background: rgba(0, 201, 87, 0.8); /* Spotify green */
     transform: scale(1.05);
 }
+
+
 
 /* 🔥 Disable Zooming */
 @media screen and (max-width: 1024px) {
@@ -194,6 +238,8 @@ body, html {
     top: 20px;
     right: 20px;
     background: rgba(0, 0, 0, 0.7);
+    font-family: "Franklin Gothic Heavy", sans-serif;
+
     padding: 10px 20px;
     border-radius: 8px;
     color: white;
@@ -215,6 +261,7 @@ body, html {
     top: 20px;
     left: 20px;
     background: rgba(0, 0, 0, 0.7);
+    font-family: "Franklin Gothic Heavy", sans-serif;
     padding: 10px 20px;
     border-radius: 8px;
     color: white;
@@ -309,13 +356,13 @@ body.livestream {
 /* 🔥 "Click Me" Text */
 .click-text {
     font-family: "Franklin Gothic Heavy", sans-serif;
+    box-shadow: 0px 0px 2px rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    margin-top: 25px; /* Moved down a little */
+    margin-top: 35px; /* Moved down a little */
     text-align: center;
     user-select: none;
-    letter-spacing: 0.10rem; /* Slight letter spacing for better readability */
 }
 
 
