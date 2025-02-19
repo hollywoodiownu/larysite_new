@@ -89,16 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    // ✅ Force custom cursor using GitHub Pages URL
-    document.body.style.cursor = "url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur'), default";
 
-    // ✅ Backup for browsers that don’t support .cur (like Firefox)
-    let testCursor = new Image();
-    testCursor.src = "https://hollywoodiownu.github.io/larysite_new/img/wand_1.png";
-    testCursor.onload = function () {
-        document.body.style.cursor = "url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.png') 25 25, auto";
-    };
+document.addEventListener("DOMContentLoaded", function () {
+    // ✅ Set the custom cursor
+    document.body.style.cursor = "url('img/wand_1.png'), auto";
 
     // 🔥 Magic Mouse Trail Effect
     document.addEventListener("mousemove", function (e) {
@@ -122,3 +116,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+

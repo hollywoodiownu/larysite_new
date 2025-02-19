@@ -26,11 +26,8 @@ body {
     overflow: hidden;
 }
 
-/* 🔥 Force Custom Wand Cursor (GitHub Pages URL) */
 body, html {
-    cursor: url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur'), 
-           url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.png') 25 25, 
-           default !important;
+    cursor: url('img/wand_1.cur'), auto;
 }
 
 /* 🔥 Magic Mouse Trail */
