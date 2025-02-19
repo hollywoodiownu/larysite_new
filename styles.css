@@ -405,68 +405,36 @@ body.livestream {
 
 
 
-/* 🔥 Mobile Fixes (Perfect Resizing) */
+/* 🔥 Mobile Optimized Layout */
 @media screen and (max-width: 768px) {
     .container {
-        width: 90%;
-        max-width: 350px;
-        transform: translate(-50%, -50%) scale(0.9);
+        width: 85%;
+        max-width: 320px;
+        transform: translate(-50%, -50%) scale(0.85);
         opacity: 0;
-        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
     }
 
-    /* Ensure proper fade-in */
     .container.show {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(0.95);
     }
 
     .profile-pic {
-        width: 6rem;
-        height: 6rem;
+        width: 5.5rem;
+        height: 5.5rem;
     }
 
     .link {
-        font-size: 0.9rem;
-        padding: 10px 16px;
-        max-width: 250px;
-    }
-
-    .link-icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    .intro-text {
-        font-size: 3rem;
-    }
-
-    .intro-logo {
-        width: 200px;
-    }
-}
-
-/* 🔥 Small Phones */
-@media screen and (max-width: 480px) {
-    .container {
-        width: 95%;
-        max-width: 320px;
-    }
-
-    .profile-pic {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    .link {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        padding: 8px 14px;
         max-width: 220px;
-        height: 45px;
+        height: 42px;
     }
 
     .link-icon {
-        width: 25px;
-        height: 25px;
+        width: 28px;
+        height: 28px;
     }
 
     .intro-text {
@@ -476,9 +444,42 @@ body.livestream {
     .intro-logo {
         width: 180px;
     }
+}
+
+/* 🔥 Small Phones */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 92%;
+        max-width: 280px;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    .profile-pic {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .link {
+        font-size: 0.8rem;
+        max-width: 200px;
+        height: 40px;
+    }
+
+    .link-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .intro-text {
+        font-size: 2.2rem;
+    }
+
+    .intro-logo {
+        width: 160px;
+    }
 
     .back-btn, .live-stream-btn {
-        font-size: 0.8rem;
-        padding: 6px 10px;
+        font-size: 0.75rem;
+        padding: 5px 8px;
     }
 }
