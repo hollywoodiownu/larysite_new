@@ -95,13 +95,23 @@ body, html {
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
+    animation: fadeIn 2.5s ease-in-out forwards;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
     
     /* 🔥 Black Shadow Effect */
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 1), 
                  -4px -4px 10px rgba(0, 0, 0, 0.8);
 }
 
+/* 🔥 "larygarymods_main.png" */
+.intro-logo {
+    width: 280px; /* Adjust as needed */
+    display: none;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 2.5s ease-in-out forwards;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
 
 /* 🔥 MAIN PAGE STYLES */
 .container {
@@ -289,14 +299,6 @@ body, html {
     margin-top: 30px;
 }
 
-/* ✅ LaryGaryMods Logo */
-.intro-logo {
-    width: 280px; /* ✅ Adjust size as needed */
-    display: none;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
 
 /* 🔥 Fix Zooming on Live Stream */
 #stream-box {
