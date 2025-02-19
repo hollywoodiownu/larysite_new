@@ -58,8 +58,8 @@ body {
 
 .intro-text {
     font-family: 'Berani', sans-serif;
-    color: white;
-    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    font-size: 6rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
@@ -118,7 +118,7 @@ body {
 /* 🔥 Fixed Button Width & Position */
 .link {
     text-decoration: none;
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    background: rgba(0, 201, 87, 0.6); /* Slightly darker green with same opacity */
     padding: 1rem;
     border-radius: 0.75rem;
     color: white;
@@ -131,7 +131,7 @@ body {
 }
 
 .link:hover {
-    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    background: rgba(0, 201, 87, 0.6); /* Slightly darker green with same opacity */
     transform: scale(1.05);
 }
 
@@ -280,8 +280,8 @@ body.livestream {
 
 /* 🔥 "Click Me" Text */
 .click-text {
-    font-family: Arial, sans-serif;
-    color: rgb(255, 0, 0);
+    font-family: Impact, sans-serif;
+    color: rgb(3, 201, 36);
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 25px; /* Moved down a little */
