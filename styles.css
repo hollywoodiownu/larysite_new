@@ -26,10 +26,9 @@ body {
     overflow: hidden;
 }
 
-/* 🔥 Custom Wand Cursor */
+/* 🔥 Force Custom Wand Cursor */
 body, html {
-    cursor: url('img/wand_1.cur'), auto;
-
+    cursor: url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur'), default !important;
 }
 
 
