@@ -207,10 +207,12 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
 
-    // Mobile-specific fix
-    if (window.innerWidth <= 768) {
-        setTimeout(() => {
+    function applyMobileFix() {
+        if (window.innerWidth <= 768) {
             container.classList.add("show");
-        }, 150); // Slight delay for smooth animation
+        }
     }
+
+    applyMobileFix();
+    window.addEventListener("resize", applyMobileFix);
 });
