@@ -1,6 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
     /********************************************************
-     * 1. AUDIO LOGIC (song2.mp3 at volume 0.2)
+     * 🔥 A) PRELOAD IMAGES
+     ********************************************************/
+    const imagesToPreload = [
+        "img/larygarymods_main.png",
+        "img/warning_1.png", 
+        // Add any other images you need preloaded
+        "img/profile.png", 
+        // etc...
+    ];
+
+    // Preload them all before user clicks
+    let loadedCount = 0;
+    imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loadedCount++;
+            console.log(`${src} loaded (${loadedCount}/${imagesToPreload.length})`);
+        };
+    });
+
+    /********************************************************
+     * 🔥 1. AUDIO LOGIC (song2.mp3 at volume 0.2)
      ********************************************************/
     const audio = new Audio("audio/song2.mp3");
     audio.volume = 0.2;
@@ -9,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         audio.play().catch(err => console.log("Autoplay blocked:", err));
     }
 
-    // Space key toggles pause/play
+    // Press Space to Pause/Play
     document.addEventListener("keydown", function (event) {
         if (event.key === " ") {
             event.preventDefault();
@@ -22,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /********************************************************
-     * 2. WARNING SCREEN → INTRO → MAIN PAGE
+     * 🔥 2. WARNING SCREEN → INTRO → MAIN PAGE
      ********************************************************/
     const warningScreen = document.querySelector(".warning-screen");
     const warningImg = document.querySelector(".warning-img");
@@ -34,53 +56,51 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
     const liveStreamBtn = document.querySelector(".live-stream-btn");
 
-    let introPlayed = false; // Prevents multiple clicks restarting
+    let introPlayed = false; // Prevent multiple clicks
 
     if (warningImg) {
         warningImg.addEventListener("click", function () {
-            if (introPlayed) return; // Only run once
+            // Only run once
+            if (introPlayed) return;
             introPlayed = true;
 
-            // Start music on user click
+            // ✅ Start music on user click
             playSong();
 
-            // Fade out warning screen
+            // ✅ Fade out warning screen
             warningScreen.style.opacity = "0";
 
-            // Show intro background
+            // ✅ Show intro background
             introScreen.style.display = "flex";
             setTimeout(() => {
                 introScreen.style.opacity = "1";
             }, 100);
 
-            // Remove warning screen from DOM after 0.5s
+            // ✅ Remove warning screen from DOM after 0.5s
             setTimeout(() => {
                 warningScreen.style.display = "none";
 
                 /*******************************
                  *  STEP A: HOLLYWOODIOWNU
                  *******************************/
-                // Fade in (1.2s)
                 introText.style.display = "block";
                 setTimeout(() => {
                     introText.style.opacity = "1";
                     introText.style.transform = "scale(1)";
                 }, 100);
 
-                // Hold at full opacity for 1.2s
+                // Hold text at full opacity for 1.2s
                 setTimeout(() => {
-                    // Fade out over 1.2s
+                    // Fade out text (1.2s)
                     introText.style.opacity = "0";
                     introText.style.transform = "scale(1.05)";
 
-                    // After fade-out complete
                     setTimeout(() => {
                         introText.style.display = "none";
 
                         /*******************************
                          *  STEP B: larygarymods_main.png
                          *******************************/
-                        // Fade in (1.2s)
                         introLogo.classList.remove("hidden");
                         introLogo.style.display = "block";
                         setTimeout(() => {
@@ -88,13 +108,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             introLogo.style.transform = "scale(1)";
                         }, 100);
 
-                        // Hold at full opacity for 1.2s
+                        // Hold logo for 1.2s
                         setTimeout(() => {
-                            // Fade out logo over 1.2s
+                            // Fade out logo (1.2s)
                             introLogo.style.opacity = "0";
                             introLogo.style.transform = "scale(1.05)";
 
-                            // After fade-out complete
                             setTimeout(() => {
                                 // Hide intro screen entirely
                                 introScreen.style.display = "none";
@@ -109,17 +128,17 @@ document.addEventListener("DOMContentLoaded", function () {
                                     container.style.transform = "translate(-50%, -50%) scale(1)";
                                 }, 100);
 
-                            }, 1200); // logo fade-out duration
+                            }, 1200); // logo fade-out
                         }, 1200); // logo hold
-                    }, 1200); // text fade-out duration
+                    }, 1200); // text fade-out
                 }, 1200); // text hold
 
-            }, 500); // let the intro screen fully appear
+            }, 500); 
         });
     }
 
     /********************************************************
-     * 3. DISABLE ZOOMING EVERYWHERE
+     * 🔥 3. DISABLE ZOOMING EVERYWHERE
      ********************************************************/
     function disableZoom(event) {
         if (event.ctrlKey || event.metaKey || event.deltaY) {
@@ -166,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /********************************************************
- * 4. MAGIC MOUSE TRAIL
+ * 🔥 4. MAGIC MOUSE TRAIL
  ********************************************************/
 document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("mousemove", function (e) {
@@ -189,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /********************************************************
- * 5. CUSTOM CURSOR (.cur → fallback .png)
+ * 🔥 5. CUSTOM CURSOR (.cur → fallback .png)
  ********************************************************/
 document.addEventListener("DOMContentLoaded", function () {
     const cursorCur = "https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur";
