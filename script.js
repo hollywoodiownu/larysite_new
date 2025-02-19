@@ -91,9 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // ✅ Set the custom cursor
-    document.body.style.cursor = "url('img/wand_1.png'), auto";
-
     // 🔥 Magic Mouse Trail Effect
     document.addEventListener("mousemove", function (e) {
         for (let i = 0; i < 3; i++) { // Creates 3 particles per move
@@ -116,4 +113,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-

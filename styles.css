@@ -27,8 +27,11 @@ body {
 }
 
 body, html {
-    cursor: url('img/wand_1.cur'), auto;
+    cursor: url('img/wand_1.cur'), 
+           url('img/wand_1.png') 25 25, 
+           auto;
 }
+
 
 /* 🔥 Magic Mouse Trail */
 .magic-trail {
