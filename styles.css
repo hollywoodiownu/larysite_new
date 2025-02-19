@@ -133,7 +133,7 @@ body, html {
 }
 
 
-/* 🔥 SMALLER & WIDER MAIN PAGE */
+/* 🔥 Ensure Container is Fixed in Place */
 .container {
     background: rgba(5, 5, 5, 0.4);
     padding: 0.8rem;
@@ -141,12 +141,12 @@ body, html {
     box-shadow: 0px 0px 1rem rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(6px);
     width: 22rem; /* Slightly wider */
-    max-height: 50rem; /* Increased max-height */
-    min-height: 30rem; /* Prevents it from collapsing */
+    max-height: 50rem; /* Max height */
+    min-height: 30rem; /* Prevents collapse */
     opacity: 0.9;
     transform: scale(0.85);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    display: none;
+    display: flex; /* Ensure it stays visible */
     align-items: center;
     flex-direction: column;
     position: absolute;
@@ -154,22 +154,20 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     height: auto;
-    overflow-y: auto; /* Allows scrolling if needed */
+    overflow: hidden; /* ✅ Prevents scrolling */
 }
-
-/* 🔥 Ensure Buttons Fit Inside */
+/* 🔥 Make Sure Buttons Fit */
 .links {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 0.7rem; /* Adjusted spacing */
-    max-height: 100%; /* Ensures it respects container */
-    overflow-y: auto; /* Allows scrolling if content exceeds */
+    gap: 0.7rem;
+    overflow: hidden; /* ✅ No scroll */
 }
 
-/* 🔥 Buttons now fit inside properly */
+/* 🔥 Ensure Buttons are Inside the Container */
 .link {
     display: flex;
     align-items: center;
@@ -182,13 +180,13 @@ body, html {
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.9);
-    width: 95%; /* Slightly reduced width */
-    max-width: 270px; /* Limit max width */
-    height: 48px; /* Slightly reduced height */
+    width: 95%;
+    max-width: 270px;
+    height: 48px;
     justify-content: center;
     text-align: center;
+    overflow: hidden; /* ✅ Prevents button overflow */
 }
-
 /* 🔥 Fix Circular Icons Inside Buttons */
 .link-icon {
     width: 32px; /* Reduced icon size */
