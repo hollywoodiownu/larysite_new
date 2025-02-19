@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // ✅ Load only song2.mp3
+    let audio = new Audio("audio/song2.mp3"); 
+    audio.volume = 0.2; // ✅ Set volume to 0.2
+
+    function playSong() {
+        audio.play().catch(error => console.log("Autoplay blocked:", error)); // ✅ Try autoplay
+    }
+
+    // ✅ Start music when user clicks the warning image
+    const warningImg = document.querySelector(".warning-img");
+    if (warningImg) {
+        warningImg.addEventListener("click", function () {
+            playSong();
+        });
+    }
+
+    // ✅ Space key to Pause/Play
+    document.addEventListener("keydown", function (event) {
+        if (event.key === " ") {
+            event.preventDefault();
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
     const warningScreen = document.querySelector(".warning-screen");
     const warningImg = document.querySelector(".warning-img");
     const introScreen = document.querySelector(".intro");
@@ -129,3 +160,4 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.cursor = `url('${cursorPng}') 25 25, auto`;
     };
 });
+
