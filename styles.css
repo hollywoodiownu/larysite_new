@@ -228,13 +228,15 @@ body {
     pointer-events: none;
 }
 
-/* 🔥 Kick Stream Embed */
 #kick-stream {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    pointer-events: none; /* Prevents zooming inside the iframe */
+    object-fit: contain; /* Ensures the video maintains sharpness */
+    image-rendering: crisp-edges; /* Forces high-quality rendering */
+    image-rendering: -webkit-optimize-contrast;
 }
+
 
 /* 🔥 Fully Lock Zoom on Live Stream Page */
 body.livestream {
