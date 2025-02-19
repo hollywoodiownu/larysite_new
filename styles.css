@@ -65,7 +65,12 @@ body {
     letter-spacing: 0.3rem;
     opacity: 0;
     animation: fadeIn 1.5s ease-in-out forwards;
+    
+    /* 🔥 Black Shadow Effect */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 1), 
+                 -4px -4px 10px rgba(0, 0, 0, 0.8);
 }
+
 
 /* 🔥 MAIN PAGE STYLES */
 .container {
@@ -283,7 +288,7 @@ body.livestream {
 /* 🔥 "Click Me" Text */
 .click-text {
     font-family: "Franklin Gothic Heavy", sans-serif;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 25px; /* Moved down a little */
