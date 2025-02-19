@@ -5,12 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const imagesToPreload = [
         "img/larygarymods_main.png",
         "img/warning_1.png", 
-        // Add any other images you need preloaded
         "img/profile.png", 
-        // etc...
     ];
 
-    // Preload them all before user clicks
     let loadedCount = 0;
     imagesToPreload.forEach(src => {
         const img = new Image();
@@ -50,95 +47,99 @@ document.addEventListener("DOMContentLoaded", function () {
     const warningImg = document.querySelector(".warning-img");
 
     const introScreen = document.querySelector(".intro");
-    const introText = document.querySelector(".intro-text");  // HOLLYWOODIOWNU
-    const introLogo = document.querySelector(".intro-logo");  // larygarymods_main.png
+    const introText = document.querySelector(".intro-text");
+    const introLogo = document.querySelector(".intro-logo");
 
     const container = document.querySelector(".container");
     const liveStreamBtn = document.querySelector(".live-stream-btn");
 
-    let introPlayed = false; // Prevent multiple clicks
+    let introPlayed = sessionStorage.getItem("introPlayed"); // Check sessionStorage
 
-    if (warningImg) {
-        warningImg.addEventListener("click", function () {
-            // Only run once
-            if (introPlayed) return;
-            introPlayed = true;
+    if (!introPlayed) {
+        sessionStorage.setItem("introPlayed", "true"); // Save session to prevent replay on back button
 
-            // ✅ Start music on user click
-            playSong();
+        if (warningImg) {
+            warningImg.addEventListener("click", function () {
+                playSong();
 
-            // ✅ Fade out warning screen
-            warningScreen.style.opacity = "0";
+                warningScreen.style.opacity = "0";
 
-            // ✅ Show intro background
-            introScreen.style.display = "flex";
-            setTimeout(() => {
-                introScreen.style.opacity = "1";
-            }, 100);
-
-            // ✅ Remove warning screen from DOM after 0.5s
-            setTimeout(() => {
-                warningScreen.style.display = "none";
-
-                /*******************************
-                 *  STEP A: HOLLYWOODIOWNU
-                 *******************************/
-                introText.style.display = "block";
+                introScreen.style.display = "flex";
                 setTimeout(() => {
-                    introText.style.opacity = "1";
-                    introText.style.transform = "scale(1)";
+                    introScreen.style.opacity = "1";
                 }, 100);
 
-                // Hold text at full opacity for 1.2s
                 setTimeout(() => {
-                    // Fade out text (1.2s)
-                    introText.style.opacity = "0";
-                    introText.style.transform = "scale(1.05)";
+                    warningScreen.style.display = "none";
+
+                    introText.style.display = "block";
+                    setTimeout(() => {
+                        introText.style.opacity = "1";
+                        introText.style.transform = "scale(1)";
+                    }, 100);
 
                     setTimeout(() => {
-                        introText.style.display = "none";
+                        introText.style.opacity = "0";
+                        introText.style.transform = "scale(1.05)";
 
-                        /*******************************
-                         *  STEP B: larygarymods_main.png
-                         *******************************/
-                        introLogo.classList.remove("hidden");
-                        introLogo.style.display = "block";
                         setTimeout(() => {
-                            introLogo.style.opacity = "1";
-                            introLogo.style.transform = "scale(1)";
-                        }, 100);
-
-                        // Hold logo for 1.2s
-                        setTimeout(() => {
-                            // Fade out logo (1.2s)
-                            introLogo.style.opacity = "0";
-                            introLogo.style.transform = "scale(1.05)";
+                            introText.style.display = "none";
+                            introLogo.classList.remove("hidden");
+                            introLogo.style.display = "block";
+                            setTimeout(() => {
+                                introLogo.style.opacity = "1";
+                                introLogo.style.transform = "scale(1)";
+                            }, 100);
 
                             setTimeout(() => {
-                                // Hide intro screen entirely
-                                introScreen.style.display = "none";
+                                introLogo.style.opacity = "0";
+                                introLogo.style.transform = "scale(1.05)";
 
-                                // Show main container
-                                container.style.display = "flex";
-                                liveStreamBtn.classList.remove("hidden");
-
-                                // Fade in container
                                 setTimeout(() => {
-                                    container.style.opacity = "1";
-                                    container.style.transform = "translate(-50%, -50%) scale(1)";
-                                }, 100);
+                                    introScreen.style.display = "none";
+                                    container.style.display = "flex";
+                                    liveStreamBtn.classList.remove("hidden");
 
-                            }, 1200); // logo fade-out
-                        }, 1200); // logo hold
-                    }, 1200); // text fade-out
-                }, 1200); // text hold
+                                    setTimeout(() => {
+                                        container.style.opacity = "1";
+                                        container.style.transform = "translate(-50%, -50%) scale(1)";
+                                    }, 100);
 
-            }, 500); 
+                                }, 1200);
+                            }, 1200);
+                        }, 1200);
+                    }, 1200);
+                }, 500);
+            });
+        }
+    } else {
+        // If intro already played, show main container immediately
+        warningScreen.style.display = "none";
+        introScreen.style.display = "none";
+        container.style.display = "flex";
+        liveStreamBtn.classList.remove("hidden");
+
+        setTimeout(() => {
+            container.style.opacity = "1";
+            container.style.transform = "translate(-50%, -50%) scale(1)";
+        }, 100);
+    }
+
+    /********************************************************
+     * 🔥 3. BACK BUTTON - RETURN TO MAIN PAGE, NOT RESTART
+     ********************************************************/
+    const backButton = document.querySelector(".back-btn");
+    if (backButton) {
+        backButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            sessionStorage.setItem("introPlayed", "true"); // Prevent intro from replaying
+
+            window.location.href = "index.html"; // Redirect to main page
         });
     }
 
     /********************************************************
-     * 🔥 3. DISABLE ZOOMING EVERYWHERE
+     * 🔥 4. DISABLE ZOOMING EVERYWHERE
      ********************************************************/
     function disableZoom(event) {
         if (event.ctrlKey || event.metaKey || event.deltaY) {
@@ -151,17 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
         }
     });
-    document.addEventListener("gesturestart", function (event) {
-        event.preventDefault();
-    });
-    document.addEventListener("dblclick", function (event) {
-        event.preventDefault();
-    });
-    document.addEventListener("touchmove", function (event) {
-        if (event.scale !== 1) {
-            event.preventDefault();
-        }
-    }, { passive: false });
 
     document.documentElement.style.zoom = "reset";
 
@@ -169,23 +159,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.body.classList.contains("livestream")) {
         document.documentElement.style.overflow = "hidden";
         document.documentElement.style.touchAction = "none";
-        let backButton = document.querySelector(".back-btn");
-        if (backButton) {
-            backButton.style.pointerEvents = "auto";
-        }
-        let iframe = document.querySelector("#kick-stream");
-        if (iframe) {
-            iframe.style.pointerEvents = "none";
-        }
-        let streamBox = document.querySelector("#stream-box");
-        if (streamBox) {
-            streamBox.style.pointerEvents = "none";
-        }
     }
 });
 
 /********************************************************
- * 🔥 4. MAGIC MOUSE TRAIL
+ * 🔥 MAGIC MOUSE TRAIL
  ********************************************************/
 document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("mousemove", function (e) {
@@ -208,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /********************************************************
- * 🔥 5. CUSTOM CURSOR (.cur → fallback .png)
+ * 🔥 CUSTOM CURSOR (.cur → fallback .png)
  ********************************************************/
 document.addEventListener("DOMContentLoaded", function () {
     const cursorCur = "https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur";
