@@ -88,6 +88,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.body.style.cursor = "url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur'), default";
+    }, 500); // Delay for GitHub Pages to load it properly
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // ✅ Set the custom cursor
@@ -115,3 +121,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
