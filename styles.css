@@ -55,20 +55,6 @@ body, html {
 
 
 
-/* 🔥 Background Always Blurred */
-.bg-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('img/dark-alley.jpg') no-repeat center center fixed;
-    background-size: cover;
-    backdrop-filter: blur(15px); /* 🔥 Always blurred */
-    filter: blur(15px); /* 🔥 Extra fallback blur */
-    z-index: -1;
-}
-
 
 /* 🔥 INTRO PAGE STYLES */
 .intro {
