@@ -281,7 +281,7 @@ body.livestream {
 /* 🔥 "Click Me" Text */
 .click-text {
     font-family: Impact, sans-serif;
-    color: rgb(3, 201, 36);
+    color: rgb(255, 255, 255);
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 25px; /* Moved down a little */
