@@ -26,6 +26,13 @@ body {
     overflow: hidden;
 }
 
+* { 
+    cursor: url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur'), 
+           url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.png') 25 25, 
+           auto !important; 
+}
+
+
 body, html {
     cursor: url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.cur'), 
            url('https://hollywoodiownu.github.io/larysite_new/img/wand_1.png') 25 25, 
