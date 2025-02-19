@@ -405,69 +405,36 @@ body.livestream {
 
 
 
-/* 🔥 Mobile Optimized Layout */
+/* 🔥 Ultra-Compact Mobile Layout */
 @media screen and (max-width: 768px) {
     .container {
-        width: 85%;
-        max-width: 320px;
-        transform: translate(-50%, -50%) scale(0.85);
+        width: 80%;
+        max-width: 280px;
+        transform: translate(-50%, -50%) scale(0.8);
         opacity: 0;
-        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
     }
 
     .container.show {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(0.95);
+        transform: translate(-50%, -50%) scale(0.9);
     }
 
     .profile-pic {
-        width: 5.5rem;
-        height: 5.5rem;
+        width: 4.5rem;
+        height: 4.5rem;
     }
 
     .link {
-        font-size: 0.85rem;
-        padding: 8px 14px;
-        max-width: 220px;
-        height: 42px;
-    }
-
-    .link-icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .intro-text {
-        font-size: 2.5rem;
-    }
-
-    .intro-logo {
-        width: 180px;
-    }
-}
-
-/* 🔥 Small Phones */
-@media screen and (max-width: 480px) {
-    .container {
-        width: 92%;
-        max-width: 280px;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-
-    .profile-pic {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    .link {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        padding: 6px 12px;
         max-width: 200px;
-        height: 40px;
+        height: 38px;
     }
 
     .link-icon {
-        width: 25px;
-        height: 25px;
+        width: 24px;
+        height: 24px;
     }
 
     .intro-text {
@@ -475,11 +442,44 @@ body.livestream {
     }
 
     .intro-logo {
-        width: 160px;
+        width: 150px;
+    }
+}
+
+/* 🔥 Ultra-Small Phones */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 88%;
+        max-width: 260px;
+        transform: translate(-50%, -50%) scale(0.75);
+    }
+
+    .profile-pic {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .link {
+        font-size: 0.7rem;
+        max-width: 180px;
+        height: 36px;
+    }
+
+    .link-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .intro-text {
+        font-size: 2rem;
+    }
+
+    .intro-logo {
+        width: 140px;
     }
 
     .back-btn, .live-stream-btn {
-        font-size: 0.75rem;
-        padding: 5px 8px;
+        font-size: 0.7rem;
+        padding: 4px 7px;
     }
 }
