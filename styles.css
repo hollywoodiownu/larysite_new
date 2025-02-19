@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'Berani';
+    src: url('img/Berani.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Prevent zooming and layout shifting */
+html {
+    font-size: 16px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+body {
+    background: url('img/background.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* 🔥 Background Always Blurred */
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('img/dark-alley.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(15px); /* 🔥 Always blurred */
+    filter: blur(15px); /* 🔥 Extra fallback blur */
+    z-index: -1;
+}
+
+
+/* 🔥 INTRO PAGE STYLES */
+.intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.intro-text {
+    font-family: 'Berani', sans-serif;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* 🔥 MAIN PAGE STYLES */
+.container {
+    background: rgba(5, 5, 5, 0.4); /* Set to 80% opacity */    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 2rem rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    width: 24rem;
+    opacity: 0.9; /* 80% Opacity */
+    transform: scale(0.9);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+}
+
+/* 🔥 Profile Pic Centered at the Top */
+.profile-pic {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.3rem solid white;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🔥 Hover Effect */
+.profile-pic:hover {
+    transform: scale(1.1); /* Slightly enlarge */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6); /* Glow effect */
+}
+
+
+/* 🔥 Fixed Button Alignment & Centering */
+.links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔥 Fixed Button Width & Position */
+.link {
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Ensures buttons take full width but don't overflow */
+    text-align: center;
+}
+
+.link:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+}
+
+/* 🔥 Disable Zooming */
+@media screen and (max-width: 1024px) {
+    html {
+        touch-action: manipulation;
+        zoom: reset;
+    }
+}
+
+/* 🔥 ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+
+
+/* 🔥 Hide elements until they are revealed */
+.hidden {
+    display: none;
+}
+
+/* 🔥 Live Stream Button */
+.live-stream-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 255, 127, 0.8); /* Same opacity as background */
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+.live-stream-btn:hover {
+    background: rgba(0, 201, 87, 0.8); /* Slightly darker green with same opacity */
+    transform: scale(1.05);
+}
+
+/* 🔥 Back to Home Button (Same Opacity) */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 65, 108, 0.8); /* Adjusted to match background opacity */
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+.back-btn:hover {
+    background: rgba(255, 75, 43, 0.8); /* Slightly darker red with same opacity */
+    transform: scale(1.05);
+}
+
+/* 🔥 Live Stream Page */
+.stream-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* 🔥 Fix Zooming on Live Stream */
+#stream-box {
+    width: 90vw;
+    max-width: 1200px;
+    height: calc(90vw * 9 / 16);
+    max-height: 80vh;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+
+    /* 🔥 Block Zooming on the Video */
+    pointer-events: none;
+}
+
+/* 🔥 Kick Stream Embed */
+#kick-stream {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    pointer-events: none; /* Prevents zooming inside the iframe */
+}
+
+/* 🔥 Fully Lock Zoom on Live Stream Page */
+body.livestream {
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
+}
+
+/* 🔥 Warning Screen */
+.warning-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('img/dark-alley.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(15px); /* 🔥 Blurred background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* 🔥 Warning Image (Now Clear) */
+.warning-img {
+    max-width: 80%;
+    max-height: 80%;
+    cursor: pointer;
+    filter: none !important; /* 🔥 Prevents the blur from affecting it */
+    animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* 🔥 Smooth Pulsing Animation */
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; } /* Subtle glow effect */
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* 🔥 "Click Me" Text */
+.click-text {
+    font-family: Arial, sans-serif;
+    color: rgb(255, 0, 0);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 25px; /* Moved down a little */
+    text-align: center;
+    user-select: none;
+    letter-spacing: 0.10rem; /* Slight letter spacing for better readability */
+}
+
+
+/* 🔥 Hide elements initially */
+.hidden {
+    display: none;
+}

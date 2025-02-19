@@ -2,43 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaryGaryMods</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HOLLYWOODIOWNU</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-content">
-        <!-- Images with loading="eager" to load immediately -->
-        <img src="img/track.jpg" alt="" class="background-img" loading="eager">
-        <img src="img/left.png" alt="" class="trees-left" loading="eager">
-        <img src="img/right.png" alt="" class="trees-right" loading="eager">
-    <a href="https://larygary.tebex.io/" target="_blank">
-            <img src="img/tebex.png" alt="Center Image" class="center-img" loading="eager">
-        </a>
+
+    <!-- Warning Screen (First Page) -->
+    <div class="warning-screen">
+        <img src="img/warning_1.png" class="warning-img" alt="Warning - Click to Continue">
+        <p class="click-text">CLICK ME</p> <!-- 🔥 Added Click Me text -->
     </div>
 
-    <a href="https://www.kick.com/hollywoodiownu" target="_blank">
-        <img src="img/kick.png" alt="Kick Image" class="kick-img" loading="eager">
-    </a>
-
-    <a href="https://discord.gg/NwQ6CWvHFj" target="_blank">
-        <img src="img/discord.png" alt="Discord Image" class="discord-img" loading="eager">
-    </a>
-
-    <a href="https://www.instagram.com/thecoltonjohn/" target="_blank">
-        <img src="img/instagram.png" alt="Instagram Image" class="instagram-img" loading="eager">
-    </a>
-
-    <a href="https://www.youtube.com/channel/UCixxdzO-EyJgrOg4nAVKIAA" target="_blank">
-        <img src="img/youtube.png" alt="Youtube Image" class="youtube-img" loading="eager">
-    </a>
-
-    <div class="duck">
-        <a href="https://discord.gg/txxXa7yndN" target="_blank">
-            <img src="img\JEFFY_BOBBY_STICKER_5.png" alt="Jeffy Bobby" class="duck-img" loading="eager">
-        </a>
+    <!-- Intro Page -->
+    <div class="intro hidden">
+        <h1 class="intro-text">HOLLYWOODIOWNU</h1>
     </div>
 
-    <script src="app.js"></script>
+<!-- Main Page -->
+<div class="container hidden">
+    <img src="img/profile.png" alt="Profile Picture" class="profile-pic">
+    <div class="links">
+        <a href="https://www.instagram.com/thecoltonjohn/" class="link">Instagram</a>
+        <a href="https://kick.com/hollywoodiownu" class="link">Kick</a>
+        <a href="https://discord.com/invite/NwQ6CWvHFj" class="link">Discord</a>
+        <a href="https://larygary.tebex.io/" class="link">Tebex</a>
+        <a href="https://www.youtube.com/channel/UCixxdzO-EyJgrOg4nAVKIAA" class="link">YouTube</a>
+        <a href="https://open.spotify.com/artist/18spsDolS6FrAu2Fd0u3HM" class="link">Spotify</a> <!-- 🔥 Added Spotify -->
+    </div>
+</div>
+
+
+    <!-- Live Stream Button -->
+    <a href="livestream.html" class="live-stream-btn hidden">Live Stream</a>
+
+    <script src="script.js"></script>
 </body>
 </html>
