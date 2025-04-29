@@ -33,6 +33,11 @@ body {
     height: 100vh;
     text-align: center;
     overflow: hidden;
+    user-select: none; /* 🚫 No text selection */
+    -webkit-user-select: none; /* 🚫 Safari/Chrome */
+    -moz-user-select: none; /* 🚫 Firefox */
+    -ms-user-select: none; /* 🚫 Edge/IE */
+    pointer-events: auto; /* ✅ Keep click working */
 }
 
 * { 

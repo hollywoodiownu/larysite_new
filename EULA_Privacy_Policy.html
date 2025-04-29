@@ -4,126 +4,144 @@
   <meta charset="UTF-8">
   <title>Hollywoodiownu Extensions Hub</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #00ff99;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 700px;
-      padding: 40px 20px 60px;
-      text-align: center;
-      position: relative;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #00ff99;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🧠 Spread top and bottom */
+  align-items: center;
+  height: 100vh; /* 🚫 Full height, no scrolling */
+  overflow: hidden; /* 🔥 No scrollbars */
+  text-align: center;
+  user-select: none; /* 🚫 No text selection */
+  -webkit-user-select: none; /* 🚫 Safari/Chrome */
+  -moz-user-select: none; /* 🚫 Firefox */
+  -ms-user-select: none; /* 🚫 Edge/IE */
+  pointer-events: auto; /* ✅ Keep click working */
+}
 
-    .linktree {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 30px;
-    }
 
-    .link-button {
-      padding: 15px 30px;
-      background-color: #00ff99;
-      color: #111;
-      border: none;
-      border-radius: 8px;
-      font-size: 20px;
-      cursor: pointer;
-      width: 250px;
-      transition: background 0.3s;
-    }
-    .link-button:hover {
-      background-color: #00cc77;
-    }
+h1 {
+  color: #727272;
+  font-size: 16px;
+  margin: 20px 0 10px 0;
+}
 
-    .box {
-      display: none;
-      background: #222;
-      border: 2px solid #00ff99;
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 600px;
-      width: 90%;
-      margin-top: 30px;
-      animation: fadeIn 0.5s ease;
-    }
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.game-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
+.game-item {
+  width: 200px;
+  height: 300px;
+  background: #222;
+  border: 2px solid #00ff99;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    p {
-      font-size: 20px;
-      margin-top: 0;
-    }
+.game-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ff99;
+}
 
-    .footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 12px;
-      color: #888;
-      width: 100%;
-      text-align: center;
-    }
+.game-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    #eulaButton, #privacyButton {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #00ff99;
-      color: #111;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-right: 10px;
-    }
+.box {
+  display: none;
+  background: #222;
+  border: 2px solid #00ff99;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease;
+}
 
-    #eulaPopup, #privacyPopup {
-      display: none;
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 700px;
-      background: #111;
-      border: 2px solid gold;
-      padding: 20px;
-      border-radius: 10px;
-      color: gold;
-      font-size: 12px;
-      overflow-y: auto;
-      max-height: 500px;
-      z-index: 9999;
-      text-align: left;
-    }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#eulaButton, #privacyButton {
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #00ff99;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#eulaPopup, #privacyPopup {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 700px;
+  background: #111;
+  border: 2px solid gold;
+  padding: 20px;
+  border-radius: 10px;
+  color: gold;
+  font-size: 12px;
+  overflow-y: auto;
+  max-height: 500px;
+  z-index: 9999;
+  text-align: left;
+}
+
+.footer {
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
   </style>
 </head>
+
 <body>
 
-  <h1>Hollywoodiownu Mods Hub</h1>
+  <h1>Hollywoodiownu Extension Hub</h1>
 
-  <div class="linktree">
-    <button class="link-button" id="spraythat">SprayThat 2.0</button>
-    <button class="link-button">Game Example 1</button>
-    <button class="link-button">Game Example 2</button>
-    <button class="link-button">Game Example 3</button>
-    <button class="link-button">Game Example 4</button>
-    <button class="link-button">Game Example 5</button>
-    <button class="link-button">Game Example 6</button>
-    <button class="link-button">Game Example 7</button>
-    <button class="link-button">Game Example 8</button>
-    <button class="link-button">Game Example 9</button>
+  <div class="game-gallery">
+    <div class="game-item" id="spraythat">
+      <img src="img/spraythat_backgroundimg.png" alt="SprayThat 2.0">
+    </div>
+    <div class="game-item">
+      <img src="img/comingsoon.png" alt="Coming Soon">
+    </div>
+    <div class="game-item">
+      <img src="img/comingsoon.png" alt="Coming Soon">
+    </div>
+    <div class="game-item">
+      <img src="img/comingsoon.png" alt="Coming Soon">
+    </div>
   </div>
 
   <div class="box" id="spraythatBox">
@@ -136,42 +154,46 @@
   </div>
 
   <div id="eulaPopup">
-    <h2>SprayThat 2.0 END USER LICENSE AGREEMENT (EULA)</h2>
-    <p>Version 2.0 - Copyright (c) 2025 HOLLYWOODIOWNU - Lary Gary Mods<br>All Rights Reserved.</p>
-  
+    <h2>SprayThat 2.1 END USER LICENSE AGREEMENT (EULA)</h2>
+    <p>Version 2.1 - Copyright (c) 2025 HOLLYWOODIOWNU - Lary Gary Mods<br>All Rights Reserved.</p>
+
     <p><strong>IMPORTANT:</strong><br>
-    By downloading, installing, or using SprayThat 2.0, you confirm that you are at least 18 YEARS OF AGE and agree to be legally bound by the terms of this agreement.</p>
-  
+    By downloading, installing, or using SprayThat 2.1, you confirm that you are at least 18 YEARS OF AGE and agree to be legally bound by the terms of this agreement.</p>
+
     <p><strong>LICENSE GRANT</strong><br>
-    You are granted a single, revocable, non-exclusive, non-transferable license to install and use SprayThat 2.0 for PERSONAL USE ONLY.</p>
-  
+    You are granted a single, revocable, non-exclusive, non-transferable license to install and use SprayThat 2.1 for PERSONAL USE ONLY.</p>
+
     <p><strong>PROHIBITED ACTIONS</strong><br>
-    You may NOT:<br>
-    • Redistribute, resell, sublicense, rent, lease, or lend SprayThat 2.0.<br>
+    • Redistribute, resell, sublicense, rent, lease, or lend SprayThat 2.1.<br>
     • Modify, adapt, translate, reverse engineer, decompile, or disassemble.<br>
     • Extract or reuse any assets (images, audio, scripts, data).<br>
     • Circumvent any license validation or DRM.</p>
-  
+
     <p><strong>INTELLECTUAL PROPERTY</strong><br>
-    SprayThat 2.0 is property of HOLLYWOODIOWNU and Lary Gary Mods. No ownership is transferred.</p>
-  
+    SprayThat 2.1 is property of HOLLYWOODIOWNU and Lary Gary Mods. No ownership is transferred.</p>
+
     <p><strong>ENFORCEMENT & TERMINATION</strong><br>
     Breach of this EULA terminates your license immediately. Access can be revoked without notice.</p>
-  
+
     <p><strong>NO WARRANTY</strong><br>
-    SprayThat 2.0 is provided "AS IS" without any warranty. Use at your own risk.</p>
-  
+    SprayThat 2.1 is provided "AS IS" without any warranty. Use at your own risk.</p>
+
     <p><strong>MODIFICATIONS</strong><br>
-    HOLLYWOODIOWNU reserves the right to update, modify, or change this EULA at any time without prior notice. It is your responsibility to review the EULA periodically.</p>
-  
+    HOLLYWOODIOWNU reserves the right to update, modify, or change this EULA at any time without prior notice.</p>
+
+    <p><strong>ADDITIONAL TERMS REGARDING TWITCH USAGE</strong><br>
+    Permission is granted for Twitch to display or allow SprayThat 2.1 inside the Twitch ecosystem. However, Twitch is prohibited from reselling, profiting from, copying, modifying, distributing, or otherwise using SprayThat 2.1 or any of its code, assets, or designs without direct, personal, written permission from HOLLYWOODIOWNU.<br><br>
+    Any acceptance of Twitch’s standard terms does not override this agreement. Any clause or term in Twitch's agreements conflicting with this EULA is null and void. Full control and ownership remain exclusively with HOLLYWOODIOWNU unless explicitly renegotiated in a private, personal agreement.</p>
+
     <p><strong>CONTACT</strong><br>
     larygarykevin@gmail.com</p>
-  
-    <p><strong>BY INSTALLING OR USING SPRAYTHAT 2.0, YOU AGREE TO ALL TERMS STATED ABOVE.</strong></p>
+
+    <p><strong>BY INSTALLING OR USING SPRAYTHAT 2.1, YOU AGREE TO ALL TERMS STATED ABOVE.</strong></p>
   </div>
 
+  <!-- Privacy Policy Popup -->
   <div id="privacyPopup">
-    <h2>SprayThat 2.0 Privacy Policy</h2>
+    <h2>SprayThat 2.1 Privacy Policy</h2>
     <p>No personal data is collected or stored. All actions happen within Twitch according to Twitch's privacy policies.</p>
     <p>For questions, contact: larygarykevin@gmail.com</p>
   </div>
@@ -181,33 +203,33 @@
   </div>
 
   <script>
-  const spraythatBtn = document.getElementById('spraythat');
-  const spraythatBox = document.getElementById('spraythatBox');
-  const eulaButton = document.getElementById('eulaButton');
-  const privacyButton = document.getElementById('privacyButton');
-  const eulaPopup = document.getElementById('eulaPopup');
-  const privacyPopup = document.getElementById('privacyPopup');
+    const spraythatBtn = document.getElementById('spraythat');
+    const spraythatBox = document.getElementById('spraythatBox');
+    const eulaButton = document.getElementById('eulaButton');
+    const privacyButton = document.getElementById('privacyButton');
+    const eulaPopup = document.getElementById('eulaPopup');
+    const privacyPopup = document.getElementById('privacyPopup');
 
-  spraythatBtn.addEventListener('click', () => {
-    spraythatBox.style.display = spraythatBox.style.display === 'none' ? 'block' : 'none';
-  });
+    spraythatBtn.addEventListener('click', () => {
+      spraythatBox.style.display = spraythatBox.style.display === 'none' ? 'block' : 'none';
+    });
 
-  eulaButton.addEventListener('click', () => {
-    privacyPopup.style.display = 'none'; // 🔥 Hide privacy if EULA is clicked
-    eulaPopup.style.display = eulaPopup.style.display === 'none' ? 'block' : 'none';
-  });
-
-  privacyButton.addEventListener('click', () => {
-    eulaPopup.style.display = 'none'; // 🔥 Hide EULA if Privacy is clicked
-    privacyPopup.style.display = privacyPopup.style.display === 'none' ? 'block' : 'none';
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      eulaPopup.style.display = 'none';
+    eulaButton.addEventListener('click', () => {
       privacyPopup.style.display = 'none';
-    }
-  });
+      eulaPopup.style.display = eulaPopup.style.display === 'none' ? 'block' : 'none';
+    });
+
+    privacyButton.addEventListener('click', () => {
+      eulaPopup.style.display = 'none';
+      privacyPopup.style.display = privacyPopup.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        eulaPopup.style.display = 'none';
+        privacyPopup.style.display = 'none';
+      }
+    });
   </script>
 
 </body>
