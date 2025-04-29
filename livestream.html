@@ -1,41 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Live Stream</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Live Stream</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 🔥 STREAM BUTTONS */
+    .button-container {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .stream-button {
+      background-color: #222;
+      color: white;
+      border: 1px solid #555;
+      padding: 10px 20px;
+      margin: 0 5px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .stream-button:hover {
+      background-color: #555;
+    }
+
+    /* 🔥 STREAM CENTERING (match your layout) */
+    .stream-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    #stream-box {
+      width: 90vw;
+      max-width: 1200px;
+      height: calc(90vw * 9 / 16);
+      max-height: 80vh;
+      margin: auto;
+      background: transparent; /* 🔥 NO background */
+      padding: 0; /* 🔥 NO padding */
+      border-radius: 0; /* 🔥 NO corner rounding */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none; /* 🔥 NO glow */
+      pointer-events: none; /* 🔥 Block zoom if you want */
+    }
+
+    #kick-stream {
+      width: 100%;
+      height: 100%;
+      border: none; /* 🔥 NO border */
+      border-radius: 0;
+      object-fit: contain;
+      image-rendering: crisp-edges;
+    }
+
+    /* 🔥 LOCK LIVE STREAM PAGE */
+    body.livestream {
+      overflow: hidden;
+      height: 100vh;
+      touch-action: none;
+    }
+  </style>
 </head>
 <body class="livestream">
 
-    <!-- Back Button -->
-    <a href="index.html" class="back-btn">← Back to Home</a>
+  <!-- 🔥 BACK BUTTON -->
+  <a href="index.html" class="back-btn" style="position: absolute; top: 10px; left: 10px;">← Back to Home</a>
 
-    <div class="stream-container">
-        <div id="stream-box">
-            <iframe id="kick-stream" src="https://player.kick.com/hollywoodiownu" frameborder="0" allowfullscreen></iframe>
-        </div>
+  <!-- 🔥 STREAM CONTAINER -->
+  <div class="stream-container">
+
+    <!-- 🔥 BUTTONS -->
+    <div class="button-container">
+      <button id="kickBtn" class="stream-button">Watch on Kick</button>
+      <button id="twitchBtn" class="stream-button">Watch on Twitch</button>
     </div>
 
-    <script src="script.js"></script>
+    <!-- 🔥 VIDEO STREAM -->
+    <div id="stream-box">
+      <iframe id="kick-stream" src="https://player.kick.com/hollywoodiownu" allowfullscreen></iframe>
+    </div>
 
-    <script>
-    // 🔥 This tiny script swaps Kick or Twitch into same iframe
+  </div>
+
+  <!-- 🔥 SCRIPTS -->
+  <script src="script.js"></script>
+
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const iframe = document.getElementById("kick-stream"); // KEEP using kick-stream
+      const iframe = document.getElementById("kick-stream");
 
-        let platform = "kick"; // Default
-        if (window.location.href.includes("twitch")) {
-            platform = "twitch";
-        }
+      document.getElementById("kickBtn").addEventListener("click", function () {
+        iframe.src = "https://player.kick.com/hollywoodiownu";
+      });
 
-        if (platform === "kick") {
-            iframe.src = "https://player.kick.com/hollywoodiownu";
-        } else if (platform === "twitch") {
-            iframe.src = "https://player.twitch.tv/?channel=hollywoodiownu&parent=yourdomain.com"; // Change this to your real domain
-        }
+      document.getElementById("twitchBtn").addEventListener("click", function () {
+        iframe.src = "https://player.twitch.tv/?channel=hollywoodiownu&parent=yourdomain.com";
+        // ⚡ IMPORTANT: Replace 'yourdomain.com' with your real domain
+      });
     });
-    </script>
+  </script>
 
 </body>
 </html>
