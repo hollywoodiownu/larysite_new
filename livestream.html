@@ -50,18 +50,18 @@
   </div>
 
   <!-- 🔥 SCRIPTS -->
-  <script src="script.js"></script>
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const iframe = document.getElementById("kick-stream");
+
+      const yourDomain = "hollywoodiownu.github.io"; // << ✅ FIXED: SET YOUR REAL DOMAIN!
 
       document.getElementById("kickBtn").addEventListener("click", function () {
         iframe.src = "https://player.kick.com/hollywoodiownu";
       });
 
       document.getElementById("twitchBtn").addEventListener("click", function () {
-        iframe.src = "https://player.twitch.tv/?channel=hollywoodiownu&parent=yourdomain.com";
+        iframe.src = `https://player.twitch.tv/?channel=hollywoodiownu&parent=${yourDomain}`;
       });
     });
   </script>
