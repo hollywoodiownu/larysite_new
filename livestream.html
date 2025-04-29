@@ -18,5 +18,24 @@
     </div>
 
     <script src="script.js"></script>
+
+    <script>
+    // 🔥 This tiny script swaps Kick or Twitch into same iframe
+    document.addEventListener("DOMContentLoaded", function () {
+        const iframe = document.getElementById("kick-stream"); // KEEP using kick-stream
+
+        let platform = "kick"; // Default
+        if (window.location.href.includes("twitch")) {
+            platform = "twitch";
+        }
+
+        if (platform === "kick") {
+            iframe.src = "https://player.kick.com/hollywoodiownu";
+        } else if (platform === "twitch") {
+            iframe.src = "https://player.twitch.tv/?channel=hollywoodiownu&parent=yourdomain.com"; // Change this to your real domain
+        }
+    });
+    </script>
+
 </body>
 </html>
