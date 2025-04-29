@@ -292,7 +292,48 @@ body, html {
     transform: scale(1.05);
 }
 
+/* 🔥 Live Stream Page */
+.stream-container {
+    text-align: center;
+    margin-top: 30px;
+}
 
+
+/* 🔥 Fix Zooming on Live Stream */
+#stream-box {
+    width: 90vw;
+    max-width: 1200px;
+    height: calc(90vw * 9 / 16);
+    max-height: 80vh;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.9); /* 🔥 Stronger Black Glow */
+
+    /* 🔥 Block Zooming on the Video */
+    pointer-events: none;
+}
+
+#kick-stream {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain; /* Ensures the video maintains sharpness */
+    image-rendering: crisp-edges; /* Forces high-quality rendering */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+
+/* 🔥 Fully Lock Zoom on Live Stream Page */
+body.livestream {
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
+}
 
 /* 🔥 Warning Screen */
 .warning-screen {

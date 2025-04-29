@@ -9,8 +9,8 @@
     /* 🔥 STREAM BUTTONS */
     .button-container {
       text-align: center;
-      margin-bottom: 20px;
       margin-top: 20px;
+      margin-bottom: 20px;
     }
     .stream-button {
       background-color: #222;
@@ -26,44 +26,6 @@
     .stream-button:hover {
       background-color: #555;
     }
-
-    /* 🔥 STREAM CENTERING (match your layout) */
-    .stream-container {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    #stream-box {
-      width: 90vw;
-      max-width: 1200px;
-      height: calc(90vw * 9 / 16);
-      max-height: 80vh;
-      margin: auto;
-      background: transparent; /* 🔥 NO background */
-      padding: 0; /* 🔥 NO padding */
-      border-radius: 0; /* 🔥 NO corner rounding */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: none; /* 🔥 NO glow */
-      pointer-events: none; /* 🔥 Block zoom if you want */
-    }
-
-    #kick-stream {
-      width: 100%;
-      height: 100%;
-      border: none; /* 🔥 NO border */
-      border-radius: 0;
-      object-fit: contain;
-      image-rendering: crisp-edges;
-    }
-
-    /* 🔥 LOCK LIVE STREAM PAGE */
-    body.livestream {
-      overflow: hidden;
-      height: 100vh;
-      touch-action: none;
-    }
   </style>
 </head>
 <body class="livestream">
@@ -71,10 +33,10 @@
   <!-- 🔥 BACK BUTTON -->
   <a href="index.html" class="back-btn" style="position: absolute; top: 10px; left: 10px;">← Back to Home</a>
 
-  <!-- 🔥 STREAM CONTAINER -->
+  <!-- 🔥 STREAM CENTERED -->
   <div class="stream-container">
 
-    <!-- 🔥 BUTTONS -->
+    <!-- 🔥 BUTTONS ABOVE STREAM -->
     <div class="button-container">
       <button id="kickBtn" class="stream-button">Watch on Kick</button>
       <button id="twitchBtn" class="stream-button">Watch on Twitch</button>
@@ -82,7 +44,7 @@
 
     <!-- 🔥 VIDEO STREAM -->
     <div id="stream-box">
-      <iframe id="kick-stream" src="https://player.kick.com/hollywoodiownu" allowfullscreen></iframe>
+      <iframe id="kick-stream" src="https://player.kick.com/hollywoodiownu" frameborder="0" allowfullscreen></iframe>
     </div>
 
   </div>
@@ -100,7 +62,6 @@
 
       document.getElementById("twitchBtn").addEventListener("click", function () {
         iframe.src = "https://player.twitch.tv/?channel=hollywoodiownu&parent=yourdomain.com";
-        // ⚡ IMPORTANT: Replace 'yourdomain.com' with your real domain
       });
     });
   </script>
