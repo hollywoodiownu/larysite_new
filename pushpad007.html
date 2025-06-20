@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="img\PUSHPAD_007.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>PushPad-007 - Pro Soundboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  body {
+  margin: 0;
+  background: linear-gradient(135deg, #0a0a0a, #151515);
+  background-size: 200% 200%;
+  animation: bgMove 20s ease infinite;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  overflow-y: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #0b0b0b;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 32px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-buttons a {
+  background: #ffdd00;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-buttons a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffdd0022;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px 40px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #bbb;
+}
+
+.cta-button {
+  background: #ffdd00;
+  color: #000;
+  font-weight: bold;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 60px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffdd0022;
+}
+
+.hero-image-box {
+  background: #0f0f0f;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  max-width: 940px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.hero-image-box img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+  pointer-events: auto;
+}
+
+.hero-image-box img:hover {
+  transform: scale(1.03);
+}
+
+.faq {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.faq h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.faq-item {
+  background-color: #1a1a1a;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  padding: 0 18px 18px;
+  display: none;
+  color: #ccc;
+  text-align: center;
+}
+
+.faq-question.open + .faq-answer {
+  display: block;
+}
+
+.order-confirm {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.discord-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ffdd00;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.discord-link:hover {
+  transform: scale(1.05);
+}
+
+</style>
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/PUSHPAD_007.png" alt="PushPad Logo" />
+      <span>PushPad-007</span>
+    </div>
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
+      <a href="https://paypal.me/hollywoodiownu/25" target="_blank">Buy Now – $25</a>
+    </div>
+  </header>
+
+<section class="hero">
+<h1 style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+  <img src="img/PUSHPAD_007.png" alt="PushPad Logo" style="height: 32px;" />
+  PushPad-007
+</h1>
+
+  <p>
+    PushPad-007 is your go-to soundboard for streamers, producers, and creatives. <br>
+    Easy setup with Streamlabs, OBS, and more. <br>
+    <strong>Created by LaryGaryMods aka Hollywoodiownu</strong>
+  </p>
+  <a href="https://paypal.me/hollywoodiownu/25" class="cta-button" target="_blank">Buy Now – $25</a>
+
+  <div class="hero-image-box">
+    <img src="img/pushpad_img.png" alt="PushPad Screenshot" />
+  </div>
+</section>
+
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">What do I do after I buy PushPad-007?<span>+</span></button>
+    <div class="faq-answer">
+      After purchase, make sure to <a href="https://discord.gg/txxXa7yndN" target="_blank" style="color: #ffdd00; font-weight: bold;">join our Discord</a> to get your download link, updates, and support.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What is PushPad-007?<span>+</span></button>
+    <div class="faq-answer">PushPad-007 is a secure offline soundboard built for streamers, producers, and creators. It runs standalone with no internet required.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is this a DAW?<span>+</span></button>
+    <div class="faq-answer">No. PushPad-007 is not a digital audio workstation. It's a lightweight soundboard for fast triggering of audio files — perfect for live use, streams, and productions.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Who is it for?<span>+</span></button>
+    <div class="faq-answer">Designed for streamers, music producers, sound designers, podcasters, and anyone needing fast, clean audio triggering during live or recorded work.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I customize the colors?<span>+</span></button>
+    <div class="faq-answer">Yes. Each pad includes a built-in color picker so you can match your setup’s aesthetic or theme.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I drag and drop audio?<span>+</span></button>
+    <div class="faq-answer">Yes. Simply drag any WAV, MP3, or OGG file onto a pad to load it — it saves automatically.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I assign keyboard hotkeys?<span>+</span></button>
+    <div class="faq-answer">Yes. You can map up to 22 hotkeys (1–22) to the pads for fast triggering without touching your mouse.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Does it work with OBS or Streamlabs?<span>+</span></button>
+    <div class="faq-answer">Yes. Setup is simple — route PushPad audio into OBS or Streamlabs using system input or a virtual audio cable.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Does it work without internet?<span>+</span></button>
+    <div class="faq-answer">Yes. After the first activation, PushPad-007 runs 100% offline — no login or cloud required.</div>
+  </div>
+</section>
+
+
+
+  <section class="order-confirm">
+    <h2>🎧 Need Help After Purchase?</h2>
+    <a href="https://discord.gg/txxXa7yndN" target="_blank" class="discord-link">Join Our Discord Server</a>
+  </section>
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      btn.querySelector('span').textContent = btn.classList.contains('open') ? '−' : '+';
+    });
+  });
+
+    window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  window.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '0')) {
+      e.preventDefault();
+    }
+  });
+  // Optional: Inform user they can zoom with browser
+  console.log("Tip: You can zoom in/out with Ctrl + Mouse Wheel or Ctrl + +/-");
+</script>
+
+
+</body>
+</html>
