@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const container = document.querySelector(".container");
     const liveStreamBtn = document.querySelector(".live-stream-btn");
+    const pushPadBtn = document.querySelector(".push-pad-btn");
 
     let introPlayed = sessionStorage.getItem("introPlayed"); // Check sessionStorage
 
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     introScreen.style.display = "none";
                                     container.style.display = "flex";
                                     liveStreamBtn.classList.remove("hidden");
+                                    if (pushPadBtn) pushPadBtn.classList.remove("hidden");
 
                                     setTimeout(() => {
                                         container.style.opacity = "1";
@@ -118,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         introScreen.style.display = "none";
         container.style.display = "flex";
         liveStreamBtn.classList.remove("hidden");
+        if (pushPadBtn) pushPadBtn.classList.remove("hidden");
 
         setTimeout(() => {
             container.style.opacity = "1";
@@ -203,11 +206,9 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
-
 /********************************************************
  * 🔥 Setting for phones (Phone Extra)
  ********************************************************/
-
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
 
